@@ -494,7 +494,7 @@ footer{
 }
 .header_low{
     position: relative;
-    top: -37px;
+    /*top: -37px;*/
     width: 100%;
     height: 300px;
     padding-top: 120px;
@@ -594,7 +594,7 @@ footer{
 }
 .header_low{
     position: relative;
-    top: -37px;
+    /*top: -37px;*/
     width: 100%;
     height: 300px;
     padding-top: 120px;

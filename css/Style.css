@@ -208,6 +208,9 @@ border-bottom: solid #222 1px;
     color: rgba(0,153,153,0.8);
     text-shadow: none;
 }
+#prod .sec_title{
+    position: absolute;
+}
 .circle{
     position: relative;
     top: -50px;

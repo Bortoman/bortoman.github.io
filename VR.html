@@ -1,0 +1,127 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js" lang="">   <![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Bortoman</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="css/BortomanGitHub.png">
+        <link rel="stylesheet" href="css/Style.css">
+
+        <link rel="stylesheet" href="galleria/themes/classic/galleria.classic.css">
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
+        <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+        <script src="js/three.min.js" type="text/javascript"></script>
+        <script>
+          function addClassOpen(){
+            $('#projects').addClass('open');
+            $('.plink').addClass('open');
+            $('#aboutme').removeClass('open');
+            $('.alink').removeClass('open');
+          }
+          function removeClassOpen(){
+            $('#projects').removeClass('open');
+            $('.plink').removeClass('open');
+            $('#aboutme').addClass('open');
+            $('.alink').addClass('open');
+          }
+        </script>
+    </head>
+    <body>
+      <div class="header_content">
+          <ul>
+              <li><a class='plink' onclick='addClassOpen()'>Projects</a></li>
+              <li><a class='alink open' onclick='removeClassOpen()'>VR</a></li>
+              <li><a class='home' href="index.html">Home</a></li>
+          </ul>
+      </div>
+      <div id='projects'>
+        <ul>
+          <li><a href="VR.html">VR</a></li>
+          <li><a href="Web.html">Web</a></li>
+          <li>Ue4</li>
+          <li>Thesis</li>
+        </ul>
+      </div>
+      <h1>Virtual Reality</h1>
+      <h2>Project Idea</h2>
+      <p>Using virtual reality to gain better distance perception when looking at photos of closed spaces, such as rooms</p>
+      <h3>The team</h3>
+      <ul>
+        <li><a href="https://github.com/Bortoman">Alessandro Mainas<a></li>
+        <li>Federico Maria Cau</li>
+        <li>Mattia Samuel Mancosu</li>
+      </ul>
+      <h3>The solution</h3>
+      <p>
+        Using equirectangular photos as sphere textures we can render a 3D space which our user can experience as a real environment.</p>
+      <p>  The illusion of perfect immersion given by a Vr headset will do the rest: when processing different images our brain relies on what we saw immediately before, then a distance perception will be far more accurate if the user can see every possible image between the point A and the point B. Exactly as we do in real life!
+      </p>
+      <h3>What did we use?</h3>
+        <ul>
+          <li>Google Cardboard</li>
+          <li>A Java webserver</li>
+          <li>Javascript(a lot!)</li>
+        </ul>
+      <p>To prove our thesis we built a fake real estate website where our user could experience a virtual tour of some houses or simply look at the very popular photo gallery<p>
+      <p>Our users were asked to aproximately identify distances between objects in a room, like the wall and the sofa, the cealing and the floor and so on.</p>
+      <p>The tests were conducted separately using alternatively the photo gallery and the virtual tour.</p>
+      <p>At the end of the test, our user were prompted to answer a simple SUS post-test regarding the user experience.</p>
+      <h3>Javascript, Three.js, WebGL</h3>
+      <p>Using the Three.js Javascript library we created an interactive 3D space inside the browser window</p>
+      <p>Indeed to create a 3D scene we need very few lines</p>
+      <code>var scene = new THREE.Scene();</br>
+      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/200, 0.1, 1000 );</br>
+      var renderer = new THREE.WebGLRenderer();</br>
+      renderer.setSize( window.innerWidth, 200 );</br>
+      container = document.getElementById('example');</br>
+      container.appendChild( renderer.domElement );</br>
+      </code>
+
+      <p>Here it's very simple to add some geometry to our scene</p>
+      <code>var geometry = new THREE.BoxGeometry( 2, 2, 2 );</br>
+            var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );</br>
+            var cube = new THREE.Mesh( geometry, material );</br>
+            scene.add( cube );</br>
+      </code>
+      <div id='example'></div>
+      <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/200, 0.1, 1000 );
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, 200 );
+        container = document.getElementById('example');
+        container.appendChild( renderer.domElement );
+        var geometry = new THREE.BoxGeometry( 2, 2, 2 );
+        var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+        var cube = new THREE.Mesh( geometry, material );
+        cube.rotation.x= 1;
+        scene.add( cube );
+        camera.position.z = 5;
+        var animate = function () {
+        requestAnimationFrame( animate );
+        cube.rotation.y += 0.05;
+        renderer.render(scene, camera);
+        };
+        animate();
+      </script>
+      <h3>The results</h3>
+      <p>We foud out that when the user has to see more than a photo to determine a distance, his mesurements are more likely to differ from the orignial, than the ones taken with the virtual tour visualization. </p>
+      <p>We can say with a 96.1% probability that there is a substancial difference between the misurements taken with the tour and those taken with the photo gallery. </p>
+      <p>The misurments taken with the tour are indeed very accurate: for a real distance of 8.5 meters, our user were only 9 to 140 <strong>centimeters</strong> wrong</p>
+      <p>The SUS post-test scored an average of 85(A+), which reflects the 100% task completition rate.</p>
+      <p>Our solution is listed in the <a href="http://people.unica.it/davidespano/teaching/ium/archivio-progetti/">Cagliari University's HCI Hall of Fame</a></p>
+      <p> <a href=""> Here<a> you can find the GitHub project<p/>
+        <footer>
+            <div>
+                <hr>
+                <p>&copy; 2016 Tek360</p>
+            </div>
+        </footer>
+    </body>
+</html>

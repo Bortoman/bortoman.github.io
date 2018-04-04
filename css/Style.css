@@ -71,10 +71,16 @@ main{
   border-width: 6px;
 }
 .avatar{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.avatar div{
+  text-align: center;
+  width: 100%;
 }
 .avatar img{
-  position: relative;
-  z-index: 8;
+  width: 100%;
 }
 #aboutme {
   padding-top: 40px;
@@ -96,14 +102,11 @@ main{
   z-index: 8;
 }
 #aboutme p{
+  text-align: center;
   position: relative;
-  top: -70px;
   margin: 10px;
   padding: 10px;
   margin-top: 0;
-  padding-top: 60px;
-  background-color: whitesmoke;
-  border-bottom-left-radius: 10px;
   z-index: 7;
 }
 #projects{
@@ -164,4 +167,24 @@ main{
 }
 .techs{
   width: 100%;
+}
+footer{
+  height: 200px;
+  background-color: red;
+  display: absolute;
+  bottom: 0;
+}
+.social{
+  position: absolute;
+  right:5px;
+  bottom:5px;
+
+}
+.social a{
+  font-size: 2em;
+  text-decoration:none;
+  color: black;
+}
+.social img{
+  width: 0.7em;
 }

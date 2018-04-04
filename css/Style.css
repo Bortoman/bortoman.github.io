@@ -175,9 +175,9 @@ footer{
   bottom: 0;
 }
 .social{
-  position: absolute;
-  right:5px;
-  bottom:5px;
+  position: relative;
+  left:5px;
+
 
 }
 .social a{

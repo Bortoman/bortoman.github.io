@@ -31,8 +31,10 @@ body{
   color: graytext;
   margin:0;
   background-color: white;
-  max-width: 100%;
   overflow-x: hidden;
+}
+body.open{
+  overflow-y: hidden;
 }
 a{
   color: red;
@@ -40,9 +42,18 @@ a{
 code{
   font-size:8pt;
 }
-main{
+main, .innerFooter{
   padding-left: 5px;
   padding-right: 5px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.innerFooter{
+  padding-top: 55px;
+}
+.innerFooter > *{
+  display: inline;
 }
 .header_content ul{
   margin: 0;
@@ -54,12 +65,19 @@ main{
   background-color: white;
   z-index: 10;
 }
+.header_content ul{
+  width: 100%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .header_content li{
   font-size: 18px;
   display: inline;
   padding: 18px;
 }
 .header_content a{
+  display: inline-block;
   color: graytext;
   text-decoration: none;
   padding-bottom: 10px;
@@ -84,10 +102,12 @@ main{
 }
 #aboutme {
   padding-top: 40px;
-  height: 530px;
   width: 100%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
   transition: ease 0.5s;
-  transform: translate(500px,0);
+  transform: translate(768px,0);
   z-index: 6;
   overflow-x: hidden;
 }
@@ -117,7 +137,7 @@ main{
   height: 100%;
   top: 41px;
   transition: ease 0.5s;
-  transform: translate(-500px,0);
+  transform: translate(-768px,0);
   z-index: 9;
 }
 #projects.open{
@@ -131,22 +151,36 @@ main{
 }
 #projects li{
   font-size: 16pt;
-  padding: 20px;
 }
 #projects a{
-
-  width: 1000px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
 }
 #projects li:hover{
 
   background-color: whitesmoke;
 }
+.gdcshead{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gdcsel{
+  width: 100%
+}
 .u-badge{
   width: 100%;
+
 }
 .webnav{
   padding-top: 30px;
   width: 100%;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-wrap: wrap;
 }
@@ -169,16 +203,15 @@ main{
   width: 100%;
 }
 footer{
-  height: 200px;
+  text-align: center;
+  height: 150px;
   background-color: red;
   display: absolute;
   bottom: 0;
 }
 .social{
   position: relative;
-  left:5px;
-
-
+  top:5px;
 }
 .social a{
   font-size: 2em;
@@ -187,4 +220,63 @@ footer{
 }
 .social img{
   width: 0.7em;
+}
+@media screen and (min-width: 620px){
+  .webel{
+    width:25%;
+  }
+}
+@media screen and (min-width: 768px){
+  main{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+ #projects{
+   width:40%;
+ }
+ #projects.open{
+   position: fixed;
+ }
+ .obfuscate{
+   position: absolute;
+   top:0;
+   width: 100%;
+   opacity: 0;
+   background-color: rgba(25,25,25,0.6);
+ }
+.obfuscate.open{
+   opacity: 1;
+   transition: linear 0.5s;
+   height: 100%;
+ }
+ #aboutme {
+   padding-top: 40px;
+   width: 100%;
+   transform: translate(0,0);
+   z-index: 6;
+ }
+ #aboutme.open{
+   transform: translate(0,0);
+   z-index: 6;
+ }
+ .gdcshead{
+   flex-wrap: wrap-reverse;
+ }
+ .gdcsel2{
+   order:0;
+   width: 30%;
+   max-width: 220px;
+ }
+ .gdcsel1{
+   padding-left: 10px;
+   order:1;
+   width: calc(70% - 10px);
+ }
+ .webel{
+   width:25%;
+ }
+}
+@media screen and (min-width: 1024px){
+
 }

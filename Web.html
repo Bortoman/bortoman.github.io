@@ -18,18 +18,22 @@
         <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
 
         <script>
-          function addClassOpen(){
-            $('#projects').addClass('open');
-            $('.plink').addClass('open');
-            $('#aboutme').removeClass('open');
-            $('.alink').removeClass('open');
-          }
-          function removeClassOpen(){
-            $('#projects').removeClass('open');
-            $('.plink').removeClass('open');
-            $('#aboutme').addClass('open');
-            $('.alink').addClass('open');
-          }
+        function addClassOpen(){
+          $('#projects').addClass('open');
+          $('.plink').addClass('open');
+          $('.obfuscate').addClass('open');
+          $('body').addClass('open');
+          $('#aboutme').removeClass('open');
+          $('.alink').removeClass('open');
+        }
+        function removeClassOpen(){
+          $('#projects').removeClass('open');
+          $('.plink').removeClass('open');
+          $('.obfuscate').removeClass('open');
+          $('body').removeClass('open')
+          $('#aboutme').addClass('open');
+          $('.alink').addClass('open');
+        }
         </script>
     </head>
     <body>
@@ -39,6 +43,8 @@
               <li><a class='alink open' onclick='removeClassOpen()'>Web</a></li>
               <li><a class='home' href="index.html">Home</a></li>
           </ul>
+      </div>
+      <div class='obfuscate' onclick="removeClassOpen()">
       </div>
       <div id='projects'>
         <ul>
@@ -73,11 +79,14 @@
         </div>
         <section id="googleScholarship">
           <h2>Google Developer Challenge Scholarship: Mobile Web</h2>
-          <p>September 2017: I've been accepted into the Google Developer Challenge Scholarship</p>
-          <img class="u-badge" src="img/Google-Dev-EMEA-Badge.png"/>
-          <p>The scholarship is made up of two courses: Offline Web Apps and ES6<p>
-          <p>A deep dive in the whys and hows of Offline First Paradigma, introducing the Service Workers and the Indexed Data Base.</p>
-          <p>A full course on the brand new feautures intruduced by JavaScript ES6</p>
+          <div class='gdcshead'>
+            <div class='gdcsel2'><img class="u-badge" src="img/Google-Dev-EMEA-Badge.png"/></div>
+            <div class='gdcsel1'><p>September 2017: I've been accepted into the Google Developer Challenge Scholarship</p>
+            <p>The scholarship is made up of two courses: Offline Web Apps and ES6<p>
+            <p>A deep dive in the whys and hows of Offline First Paradigma, introducing the Service Workers and the Indexed Data Base.<br/></br>
+              A full course on the brand new feautures intruduced by JavaScript ES6</p>
+            </div>
+          </div>
           <p>The Challenge consists in finishing the course before the deadline and helping the others participants using a dedicated forum and a Slack channel</p>
           <p>From the 200.000 participants only 6.000 of them will be selected and rewarded with a full Nanodegree course: Google's Mobile Web Specialist Course.</p>
         </section>
@@ -119,23 +128,23 @@
           <p><a href="https://github.com/Bortoman/progresstools">Here</a> you can find the GitHub repository of the projcet, and if you want to know more about the Hackathon <a href="https://news.sap.com/code-with-purpose-hackathon-students-tackle-global-challenges-with-sap-cloud-platform/">click here!</a></p>
         </section>
         <section id='owl'>
-          <h2>OwlinkLub</h2>
+          <h2>OwlkLub</h2>
           <p>I'm currently working for a start up called <a href="https://www.instagram.com/owlklub/">Owlklub</a>. In a team we are building an e-commerce website.</p>
         </section>
       </main>
 
       <footer>
-          <div >
-              <hr>
-              <div class='social'>
-                <a href='mailto:alessandro.mainas@hotmail.it'>✉</a>
-                <a href='https://www.linkedin.com/in/alessandromainas/'><img src="img/linkedin.png"/></a>
-                <a href='https://www.instagram.com/mainasalex/'><img src="img/2000px-Instagram_simple_icon.svg.png"/></a>
-                <a href='https://twitter.com/AlexMainas'><img src="img/23931.svg"/></a>
-                <a href='https://github.com/Bortoman'><img src="img/25231.svg"/></a>
-              </div>
-              <p style=" padding: 5px; color:black;">Made with ♥ at 3 AM</p>
-          </div>
+        <div class='innerFooter'>
+          <p style="font-weight: bold; color:black;">Made with ♥ at 3 AM | </p>
+            <div class='social'>
+              <a href='mailto:alessandro.mainas@hotmail.it'><img src="img/icons8-envelope-32.png"/></a>
+              <a href='https://www.linkedin.com/in/alessandromainas/'><img src="img/linkedin.png"/></a>
+              <a href='https://www.instagram.com/mainasalex/'><img src="img/2000px-Instagram_simple_icon.svg.png"/></a>
+              <a href='https://www.codementor.io/alessandromainas'><img src="img/unnamed.png"/></a>
+              <a href='https://github.com/Bortoman'><img src="img/25231.svg"/></a>
+            </div>
+
+        </div>
       </footer>
     </body>
 </html>

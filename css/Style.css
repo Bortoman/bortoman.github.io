@@ -55,10 +55,6 @@ main, .innerFooter{
 .innerFooter > *{
   display: inline;
 }
-.header_content ul{
-  margin: 0;
-  padding: 9px;
-}
 .header_content{
   position: relative;
   width: 100%;
@@ -66,7 +62,9 @@ main, .innerFooter{
   z-index: 10;
 }
 .header_content ul{
-  width: 100%;
+  margin: 0;
+  padding: 9px;
+  width: calc(100% - 18px);
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
@@ -106,15 +104,8 @@ main, .innerFooter{
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
-  transition: ease 0.5s;
-  transform: translate(768px,0);
   z-index: 6;
   overflow-x: hidden;
-}
-#aboutme.open{
-  transition: ease 0.5s;
-  transform: translate(0,0);
-  z-index: 6;
 }
 #aboutme h2{
   position: relative;
@@ -124,7 +115,6 @@ main, .innerFooter{
 #aboutme p{
   text-align: center;
   position: relative;
-  margin: 10px;
   padding: 10px;
   margin-top: 0;
   z-index: 7;
@@ -208,6 +198,7 @@ footer{
   background-color: red;
   display: absolute;
   bottom: 0;
+  width: 100%;
 }
 .social{
   position: relative;

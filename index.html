@@ -41,6 +41,17 @@
           $('body').removeClass('open')
           $('.alink').addClass('open');
         }
+        if (navigator.share) {
+                navigator.share({
+                    title: 'Event',
+                    text: 'Check out This Event!',
+                    url: 'https://bortoman.github.io',
+                })
+                    .then(() => console.log('Successful share'))
+                    .catch((error) => console.log('Error sharing', error));
+            } else {
+                console.log(navigator);
+            }
         </script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->

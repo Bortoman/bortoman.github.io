@@ -227,6 +227,17 @@ footer{
   bottom: 0;
   width: 100%;
 }
+footer button {
+  display: inline-block;
+  text-align: center;
+  color: red;
+  background-color: white;
+  font-weight: bold;
+  margin-top: 16px;
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: none;
+}
 .social{
   position: relative;
   top:5px;

@@ -48,10 +48,10 @@
                   text: 'Check out This Event!',
                   url: 'https://bortoman.github.io',
               })
-                  .then(() => console.log('Successful share'))
+                  .then(() => $('footer button').html('Thanks!'))
                   .catch((error) => console.log('Error sharing', error));
           } else {
-              console.log('No navigator :(');
+              $('footer button').html(':(');
           }
         }
 
@@ -119,8 +119,8 @@
                 <a href='https://www.codementor.io/alessandromainas'><img src="img/unnamed.png"/></a>
                 <a href='https://github.com/Bortoman'><img src="img/25231.svg"/></a>
               </div>
-            <button type='button' onclick="share()">Share it</button>
           </div>
+          <button type='button' onclick="share()">Share it</button>
         </footer>
     </body>
 </html>

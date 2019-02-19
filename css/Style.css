@@ -89,6 +89,7 @@ main, .innerFooter{
   padding-bottom: 10px;
   border-bottom: solid red 2px;
   z-index: 10;
+  cursor: pointer;
 }
 .header_content a.open{
   transition: ease 0.2s;

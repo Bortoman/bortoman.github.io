@@ -1,11 +1,9 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Arial??
 */
-/* 
+/*
     Created on : 2-gen-2017, 12.21.58
-    Author     : Admin
+    Author     : Alessandro Mainas
 */
 
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
@@ -42,7 +40,7 @@ body{
 
 #box{
     width: 100%;
-    height: 100%;  
+    height: 100%;
 }
 
 
@@ -71,15 +69,15 @@ body{
 
 #header_box li{
     display: inline;
-    float: right; 
+    float: right;
 }
 
 #header_box a {
     display: block;
     padding: 8px;
-    background-color: #ffffff; 
-    
-}  
+    background-color: #ffffff;
+
+}
 
 #header_box li a {
     display: block;
@@ -90,28 +88,28 @@ body{
     text-decoration: none;
     color: #000; /* colore opzioni header */
     font-weight: bold;
-    
+
 }
 
 #header_box li a:hover {
-    background-color: #3399ff;  
+    background-color: #3399ff;
     color: #fff;
     text-decoration: underline;
-    
+
 }
-       
+
         /* Autocomplete
 ----------------------------------*/
-.ui-autocomplete { 
-    position: absolute; 
-    cursor: default;  
+.ui-autocomplete {
+    position: absolute;
+    cursor: default;
     max-height: 130px;
     overflow-y: auto;
     /* prevent horizontal scrollbar */
     overflow-x: hidden;
     border-radius: 5px;
-}       
-.ui-autocomplete-loading { 
+}
+.ui-autocomplete-loading {
     background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
 
 /* workarounds */
@@ -146,7 +144,7 @@ body{
         margin: -1px;
 }
 
-#searchbar{   
+#searchbar{
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
@@ -170,8 +168,8 @@ body{
     background-size: 22px 22px;
     background-repeat: no-repeat;
 }
-              
-/* lunghezza form */           
+
+/* lunghezza form */
 .form-container {
 	width: 310px;
 	height: 33px;
@@ -182,7 +180,7 @@ body{
 	background: #f8f8f8;
 	border: 1px solid #000;
 	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px; 
+	-webkit-border-radius: 8px;
 	border-radius: 8px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#eeeeee));
 	background-image: -webkit-linear-gradient(top, #f8f8f8, #eeeeee);
@@ -204,7 +202,7 @@ body{
 	background: #e63c0d;
 	border: 1px solid #d62700;
 	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px; 
+	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#f55f15), to(#e63c0d));
 	background-image: -webkit-linear-gradient(top, #f55f15, #e63c0d);
@@ -235,7 +233,7 @@ body{
 	-webkit-box-shadow: 0 1px 6px #e4340b inset;
 	box-shadow: 0 1px 6px white inset;
         background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
-      
+
 }
 
 .submit-container:onclick{
@@ -254,7 +252,7 @@ body{
         background-size: 22px 22px;
         background-position: 1px 5px;
 	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px; 
+	-webkit-border-radius: 6px;
 	border-radius: 6px;
         outline: none;
 }
@@ -262,12 +260,12 @@ body{
 
 
 /*posizione barra di ricerca */
-#searchfield { 
+#searchfield {
 
 width: 240px; /* larghezza barra di ricerca */
-text-align: left; 
+text-align: left;
 margin-top: 8px;
-margin-bottom: 15px; 
+margin-bottom: 15px;
 margin-left: 20px;
 float: left;}
 
@@ -279,7 +277,7 @@ float: left;}
   padding: 5px;
   border-radius: 3px;
   margin: 5px 0 0 0;
-  
+
 }
 
 #searchfield form .biginput {
@@ -307,7 +305,7 @@ float: left;}
 /* messaggio di errore */
 .errormsg{
     font-size: 60px;
-    
+
 }
 
 /* messaggio di warning */
@@ -350,7 +348,7 @@ float: left;}
     margin-top: 0px;
     width: 95%;
     height: 570px;
-    border:1px solid black; 
+    border:1px solid black;
     background-color: white;
     font-size: 10px;
     text-align: center;
@@ -364,14 +362,14 @@ float: left;}
     background-color: #eef0f7;
     display: inline-block;
 
-    /*padding: 10px; check here */ 
-    
+    /*padding: 10px; check here */
+
 }
 
 /* css dei selectmenu */
 
 #selectmenu{
-    
+
 }
 
 .selectmenu {
@@ -401,11 +399,11 @@ float: left;}
 
 
 .allinea{
-    
-    display: inline-block; 
+
+    display: inline-block;
     width: 98%;
     height: 75%;
-    border: 1px solid black; 
+    border: 1px solid black;
     position: relative;
     margin-top: 10px;
 
@@ -435,8 +433,8 @@ float: left;}
 }
 
 #gmaps-canvas {
-	
-		width: 100%;	
+
+		width: 100%;
 		height: 428px;
 	}
 
@@ -458,9 +456,9 @@ float: left;}
       float: left;
       overflow: scroll;
       overflow-x: hidden;
-      
+
     }
-    
+
     /* Prodotti */
     #cliente_title_480table{
     text-align: center;
@@ -475,22 +473,22 @@ float: left;}
         margin: auto;
         /*border: 1px solid gainsboro;*/
     }
-    
+
     th{
         height: 150px;
         width: 60px;
         padding: 0;
         border: 1px solid gainsboro;
     }
-    
-    
-   
+
+
+
 
     /* alternanza di colore tra le righe */
     tr:nth-child(even) {
         background-color: #f2f2f2;
     }
-    
+
     td{
         width: 315px; /* lunghezza campi */
         padding: 3px;
@@ -498,13 +496,13 @@ float: left;}
         border: 1px solid gainsboro;
         font-size: 13px;
     }
-    
+
     #on_off_480table2{
         margin-top: 15px;
     }
-    
-    
-    /* bottone visualizza ulteriori dettagli casa */  
+
+
+    /* bottone visualizza ulteriori dettagli casa */
     /* tabella per min width 480 */
     .bottoneinfo{
     /* dimensione e colore del bordo */
@@ -512,7 +510,7 @@ float: left;}
     /* ondulazione angoli */
     border-radius: 4px;
     /* ombra angoli */
-    box-shadow: 0 1px #fff;  
+    box-shadow: 0 1px #fff;
 
     /* larghezza bottone */
     width: 125px;
@@ -542,10 +540,10 @@ float: left;}
       background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00eeee));*/
         background: #99ebff;
     }
- 
+
     /* slider */
-    
-     
+
+
     #slider1{
         float: left;
         margin-left: 120px;
@@ -553,45 +551,45 @@ float: left;}
         font-size: 12px;
         font-weight: bold;
     }
-    
+
     /* testo + slider prezzo */
     .sliderprezzo{
         margin-bottom: 14px;
         margin-left: 10px;
     }
-    
+
     /* solo slider prezzo */
     .sliderprezzo1{
-        display: inline-block; 
-        width: 400px; 
+        display: inline-block;
+        width: 400px;
         padding: 0 5px;
         margin-left: 36px;
     }
-    
+
         /* testo + slider metratura */
     .slidermetratura{
         margin-left: 10px;
     }
-    
+
       /* solo slider metratura */
     .slidermetratura1{
-        display: inline-block; 
-        width: 400px; 
+        display: inline-block;
+        width: 400px;
         padding: 0 5px;
         margin-left: 20px;
     }
-   
-    
+
+
     #menu{
         margin-top: 8px;
     }
     /*
     #noresults{
-        font-size: 20px; 
+        font-size: 20px;
         margin-top: 20px;
     }*/
-    
-     .noresults1{          
+
+     .noresults1{
         padding: 5px;
         color: #9F6000;
         background-color: #FEEFB3;
@@ -605,11 +603,11 @@ float: left;}
         border: 1px solid;
 
     }
-    
-    
+
+
     footer {
     position: relative;
-    
+
     padding: 5px;
     text-align: center;
     width: 100%;
@@ -621,9 +619,9 @@ footer a{
     padding: 5px;
     text-decoration: none;
 }
-    
+
 @media only screen and (max-width: 1250px){
-    
+
 
 }
 
@@ -635,9 +633,9 @@ footer a{
         display: none;
     }
     .slidermetratura{
-        
+
         margin-left: 30px;
-        
+
     }
     .slidermetratura1, .sliderprezzo1{
         width: 65%;
@@ -646,7 +644,7 @@ footer a{
     .sliderprezzo{
         margin-left: 30px;
     }
-    
+
     #filtri{
         height: 160px;
     }
@@ -666,7 +664,7 @@ footer a{
     #allinea{
         height: 400px;
     }
-    
+
 
 }
 
@@ -744,15 +742,15 @@ footer a{
 
     #header_box li{
         display: block;
-        float: none; 
+        float: none;
     }
 
     #header_box a {
         display: block;
         padding: 0;
-        background-color: #ffffff; 
+        background-color: #ffffff;
 
-    }  
+    }
 
     #header_box li a {
         display: block;
@@ -767,7 +765,7 @@ footer a{
     }
 
     #header_box li a:hover {
-        background-color: #3399ff;  
+        background-color: #3399ff;
         color: #fff;
         text-decoration: underline;
 
@@ -780,5 +778,5 @@ footer a{
         width: 20px;
         height: 20px;
     }
-    
+
 }

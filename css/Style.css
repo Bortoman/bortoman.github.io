@@ -32,6 +32,11 @@ Boring text...
     transform: translateY(-50px);
   }
 }
+
+body, html {
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: Circular;
   color: graytext;

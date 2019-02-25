@@ -1,0 +1,318 @@
+/*
+Boring text...
+*/
+/*
+    Created on : 11-giu-2016, 12.28.55
+    Author     : Alessandro Mainas
+*/
+@font-face {
+  font-family:Circular;src:url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-light.woff2') format('woff2'),url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-light.woff') format('woff');font-weight:300;font-style:normal;
+}
+
+@font-face {
+  font-family:Circular;src:url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-book.woff2') format('woff2'),url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-book.woff') format('woff');font-weight:400;font-style:normal;
+}
+
+@font-face {
+  font-family:Circular;src:url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-medium.woff2') format('woff2'),url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-medium.woff') format('woff');font-weight:500;font-style:normal;
+}
+
+@font-face {
+  font-family:Circular;src:url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-bold.woff2') format('woff2'),url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-bold.woff') format('woff');font-weight:700;font-style:normal;
+}
+
+@font-face {
+  font-family:Circular;src:url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-black.woff2') format('woff2'),url('https://sp-bootstrap.global.ssl.fastly.net/7.3.0/fonts/circular-black.woff') format('woff');font-weight:900;font-style:normal;
+}
+@keyframes securityAnimation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-50px);
+  }
+}
+
+body, html {
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: Circular;
+  color: #34d058;
+  margin:0;
+  background-color: #282E32;
+  overflow-x: hidden;
+}
+body.open{
+  overflow-y: hidden;
+}
+a{
+  color: #34d058;
+}
+code{
+  font-size:8pt;
+}
+main, .innerFooter{
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.innerFooter{
+  padding-top: 55px;
+}
+.innerFooter > *{
+  display: inline;
+}
+.header_content{
+  position: relative;
+  width: 100%;
+  background-color: #282E32;
+  z-index: 10;
+}
+.header_content ul{
+  margin: 0;
+  padding: 9px;
+  width: calc(100% - 18px);
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header_content li{
+  font-size: 18px;
+  display: inline;
+  padding: 18px;
+}
+.header_content a{
+  display: inline-block;
+  color: #34d058;
+  text-decoration: none;
+  padding-bottom: 10px;
+  border-bottom: solid red 2px;
+  z-index: 10;
+  cursor: pointer;
+}
+.header_content a.open{
+  transition: ease 0.2s;
+  border-width: 6px;
+}
+.avatar{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.avatar div{
+  text-align: center;
+  width: 100%;
+}
+.avatar img{
+  width: 100%;
+}
+#aboutme {
+  padding-top: 40px;
+  width: 100%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 6;
+  overflow-x: hidden;
+}
+#aboutme h2{
+  position: relative;
+  padding-left: 20px;
+  z-index: 8;
+}
+#aboutme p{
+  text-align: center;
+  position: relative;
+  padding: 10px;
+  margin-top: 0;
+  z-index: 7;
+}
+#projects{
+  position: absolute;
+  padding-top: 40px;
+  background-color: #282E32;
+  width: 100%;
+  height: 100%;
+  top: 41px;
+  transition: ease 0.5s;
+  transform: translate(-768px,0);
+  z-index: 9;
+}
+#projects.open{
+  transition: ease 0.5s;
+  transform: translate(0,0);
+  z-index: 9;
+}
+#projects ul{
+  padding: 0;
+  list-style-type: none;
+}
+#projects li{
+  font-size: 16pt;
+  overflow: hidden;
+  position: relative;
+}
+#projects li.security a {
+  color: #282E32;
+}
+#projects li:hover{
+  background-color: hsla(0,0%,100%,.7);
+}
+#projects li.security:hover {
+  background-color: unset;
+}
+#projects li.security:hover:before{
+  content: '';
+  width: 100%;
+  height: 200px;
+  background: url('../img/security.svg');
+  position: absolute;
+  background-color: black;
+  background-repeat: repeat;
+  background-size: 100px;
+  z-index: -1;
+  animation: securityAnimation 1.0s linear infinite;
+}
+#projects a{
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+.gdcshead{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gdcsel{
+  width: 100%
+}
+.u-badge{
+  width: 100%;
+}
+.webnav{
+  padding-top: 30px;
+  width: 100%;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.webnav a{
+}
+.webel{
+  font-weight: bold;
+  font-size: 1.1em;
+  width: 50%;
+  text-align: center;
+}
+.webnav img{
+  width: 100%;
+  height: 100%;
+}
+.ueimg{
+  width: 100%;
+}
+.techs{
+  width: 100%;
+}
+footer{
+  text-align: center;
+  height: 150px;
+  background-color: red;
+  display: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer button {
+  display: inline-block;
+  text-align: center;
+  color: white;
+  background: linear-gradient(-180deg, #34d058, #28a745 90%);
+  font-weight: bold;
+  margin-top: 16px;
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: none;
+}
+.made-with {
+  font-weight: bold;
+  color: black;
+}
+.social{
+  position: relative;
+  top:5px;
+}
+.social a{
+  font-size: 2em;
+  text-decoration:none;
+  color: black;
+}
+.social img{
+  width: 0.7em;
+}
+@media screen and (min-width: 620px){
+  .webel{
+    width:25%;
+  }
+}
+@media screen and (min-width: 768px){
+  main{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+ #projects{
+   width:40%;
+ }
+ #projects.open{
+   position: fixed;
+ }
+ .obfuscate{
+   position: absolute;
+   top:0;
+   width: 100%;
+   opacity: 0;
+   background-color: rgba(25,25,25,0.6);
+ }
+.obfuscate.open{
+   opacity: 1;
+   transition: linear 0.5s;
+   height: 100%;
+ }
+ #aboutme {
+   padding-top: 40px;
+   width: 100%;
+   transform: translate(0,0);
+   z-index: 6;
+ }
+ #aboutme.open{
+   transform: translate(0,0);
+   z-index: 6;
+ }
+ .gdcshead{
+   flex-wrap: wrap-reverse;
+ }
+ .gdcsel2{
+   order:0;
+   width: 30%;
+   max-width: 220px;
+ }
+ .gdcsel1{
+   padding-left: 10px;
+   order:1;
+   width: calc(70% - 10px);
+ }
+ .webel{
+   width:25%;
+ }
+}
+@media screen and (min-width: 1024px){
+
+}

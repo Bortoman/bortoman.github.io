@@ -209,6 +209,16 @@ main, .innerFooter{
 .p-list {
   list-style-type: square;
 }
+.article_header {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(165deg, #28a745, transparent 30%, transparent 70%, #28a745 100%), url('../img/governance_header.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 .webel{
   font-weight: bold;
   font-size: 1.1em;

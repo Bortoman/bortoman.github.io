@@ -212,7 +212,7 @@ main, .innerFooter{
 .article_header {
   width: 100%;
   height: 250px;
-  background: linear-gradient(165deg, #28a745, transparent 30%, transparent 70%, #28a745 100%), url('../img/governance_header.jpg');
+  background: linear-gradient(165deg, #28a745, transparent 30%, transparent 70%, #282E32 100%), url('../img/governance_header.jpg');
   background-size: cover;
   background-position: center;
   display: flex;

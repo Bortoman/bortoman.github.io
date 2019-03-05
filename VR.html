@@ -110,11 +110,16 @@
           var cube = new THREE.Mesh( geometry, material );
           cube.rotation.x= 1;
           scene.add( cube );
+          var outlineMaterial = new THREE.MeshBasicMaterial( { color: 0x34d058, wireframe: true } );
+          var cubeOutline = new THREE.Mesh( geometry, outlineMaterial );
+          cubeOutline.rotation.x= 1;
+          scene.add( cubeOutline );
           camera.position.z = 5;
           var animate = function () {
-          requestAnimationFrame( animate );
-          cube.rotation.y += 0.05;
-          renderer.render(scene, camera);
+            requestAnimationFrame( animate );
+            cube.rotation.y += 0.05;
+            cubeOutline.rotation.y += 0.05;
+            renderer.render(scene, camera);
           };
           animate();
         </script>

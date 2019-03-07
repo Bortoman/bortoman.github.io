@@ -244,10 +244,11 @@ footer{
   width: 100%;
 }
 footer button {
+  cursor: pointer;
   display: inline-block;
   text-align: center;
   color: white;
-  background: linear-gradient(-180deg, #282E32, #28a745 90%);
+  background: linear-gradient(-180deg, #282E32, #2F4F4F 90%);
   font-weight: bold;
   margin-top: 16px;
   border-radius: 6px;

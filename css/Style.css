@@ -231,6 +231,7 @@ footer{
   width: 100%;
 }
 footer button {
+  cursor: pointer;
   display: inline-block;
   text-align: center;
   color: red;

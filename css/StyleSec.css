@@ -219,6 +219,9 @@ main, .innerFooter{
   flex-direction: row;
   justify-content: flex-start;
 }
+.article_header img {
+  margin-top: 7px;
+}
 .webel{
   font-weight: bold;
   font-size: 1.1em;

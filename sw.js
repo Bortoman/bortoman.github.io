@@ -14,6 +14,12 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         '/index.html',
         '/Security.html',
+        '/Thesis.html',
+        '/ThesisSecurity.html',
+        '/Ue4.html',
+        '/VR.html',
+        '/Web.html',
+        '/404.html',
         'css/Style.css',
         'css/StyleSec.css'
       ]);

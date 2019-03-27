@@ -190,10 +190,15 @@ main, .innerFooter{
   flex-wrap: wrap;
 }
 .gdcsel{
+  width: 100%;
+}
+.gdcsel2 {
+  text-align: center;
   width: 100%
 }
 .u-badge{
   width: 100%;
+  max-width: 220px;
 }
 .webnav{
   padding-top: 30px;
@@ -308,11 +313,15 @@ footer button:active {
    order:0;
    width: 30%;
    max-width: 220px;
+   display: flex;
+   align-items: center;
  }
  .gdcsel1{
    padding-left: 10px;
    order:1;
    width: calc(70% - 10px);
+   display: flex;
+   flex-direction: column;
  }
  .webel{
    width:25%;

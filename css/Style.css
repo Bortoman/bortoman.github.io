@@ -44,6 +44,17 @@ body{
   background-color: white;
   overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: red;
+}
 body.open{
   overflow-y: hidden;
 }

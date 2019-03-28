@@ -35,11 +35,11 @@ Boring text...
 
 body, html {
   scroll-behavior: smooth;
-  scrollbar-color: #34d058 lightgray;
+  scrollbar-color: #34d058 #282E32;
   scrollbar-width: thin;
   scrollbar-face-color: #34d058;
   scrollbar-arrow-color: #34d058;
-  scrollbar-track-color: lightgrey;
+  scrollbar-track-color: #282E32;
 }
 
 body{
@@ -51,6 +51,17 @@ body{
 }
 body.open{
   overflow-y: hidden;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #282E32;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #34d058;
 }
 a{
   color: #34d058;

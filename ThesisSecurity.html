@@ -18,7 +18,7 @@
         <title>Bortoman</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta data-react-helmet="true" name="theme-color" content="#34d058"/>
         <link rel="icon" href="css/BortomanGitHub.png">
         <link rel="stylesheet" href="css/StyleSec.css">
 
@@ -44,9 +44,9 @@
         function share() {
           if (navigator.share) {
               navigator.share({
-                  title: 'Bortoman',
-                  text: 'Check out this awesome website!',
-                  url: 'https://bortoman.github.io',
+                  title: 'Cybersecurity guide for small to medium-sized business, based on NIST Cybersecurity Framework',
+                  text: 'Check out Bortoman\'s MS thesis!',
+                  url: 'https://bortoman.github.io/ThesisSecurity.html',
               })
                   .then(() => $('footer button').html('Thanks!'))
                   .catch((error) => console.log('Error sharing', error));
@@ -84,7 +84,7 @@
           </ul>
         </div>
         <main>
-          <h1>Developing a cybersecurity guide for small to medium-sized business, based on NIST Cybersecurity Framework</h1>
+          <h1>Cybersecurity guide for small to medium-sized business, based on NIST Cybersecurity Framework</h1>
           <p>
             A Case Study
           </p>
@@ -140,6 +140,7 @@
                 <a href='https://github.com/Bortoman'><img src="img/25231.svg"/></a>
               </div>
           </div>
+          <button type='button' onclick="share()">Share it</button>
         </footer>
     </body>
 </html>

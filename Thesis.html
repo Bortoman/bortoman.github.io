@@ -12,40 +12,37 @@
         <meta data-react-helmet="true" name="theme-color" content="red"/>
         <link rel="icon" href="css/BortomanGitHub.png">
         <link rel="stylesheet" href="css/Style.css">
-
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
         <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
-
         <script>
-        function addClassOpen(){
-          $('#projects').addClass('open');
-          $('.plink').addClass('open');
-          $('.obfuscate').addClass('open');
-          $('body').addClass('open');
-          $('#aboutme').removeClass('open');
-          $('.alink').removeClass('open');
-        }
-        function removeClassOpen(){
-          $('#projects').removeClass('open');
-          $('.plink').removeClass('open');
-          $('.obfuscate').removeClass('open');
-          $('body').removeClass('open')
-          $('#aboutme').addClass('open');
-          $('.alink').addClass('open');
-        }
-        function share() {
-          if (navigator.share) {
-              navigator.share({
-                  title: 'Evaluation of interaction models in volume visualization',
-                  text: 'Check out Bortoman\'s BS thesis!',
-                  url: 'https://bortoman.github.io/Thesis.html',
-              })
-                  .then(() => $('footer button').html('Thanks!'))
-                  .catch((error) => console.log('Error sharing', error));
-          } else {
-              $('footer button').html(':(');
-          }
-        }
+            function addClassOpen(){
+              $('#projects').addClass('open');
+              $('.plink').addClass('open');
+              $('.obfuscate').addClass('open');
+              $('body').addClass('open');
+              $('#aboutme').removeClass('open');
+              $('.alink').removeClass('open');
+            }
+            function removeClassOpen(){
+              $('#projects').removeClass('open');
+              $('.plink').removeClass('open');
+              $('.obfuscate').removeClass('open');
+              $('body').removeClass('open')
+              $('#aboutme').addClass('open');
+              $('.alink').addClass('open');
+            }
+            function share() {
+              if (navigator.share) {
+                  navigator.share({
+                      title: 'Evaluation of interaction models in volume visualization',
+                      text: 'Check out Bortoman\'s BS thesis!',
+                      url: 'https://bortoman.github.io/Thesis.html',
+                  })
+                      .then(() => $('footer button').html('Thanks!'))
+                      .catch((error) => console.log('Error sharing', error));
+              } else {
+                  $('footer button').html(':(');
+              }
+            }
         </script>
     </head>
     <body>

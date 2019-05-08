@@ -21,45 +21,40 @@
         <meta data-react-helmet="true" name="theme-color" content="#34d058"/>
         <link rel="icon" href="css/BortomanGitHub.png">
         <link rel="stylesheet" href="css/StyleSec.css">
-
         <link rel="stylesheet" href="galleria/themes/classic/galleria.classic.css">
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
         <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
-
         <script>
-        if(navigator.serviceWorker) {
-          navigator.serviceWorker.register('/sw.js').then(function(){console.log('serviceWorker registered');});
-        }
-        function addClassOpen(){
-          $('#projects').addClass('open');
-          $('.plink').addClass('open');
-          $('.obfuscate').addClass('open');
-          $('body').addClass('open');
-          $('.alink').removeClass('open');
-        }
-        function removeClassOpen(){
-          $('#projects').removeClass('open');
-          $('.plink').removeClass('open');
-          $('.obfuscate').removeClass('open');
-          $('body').removeClass('open')
-          $('.alink').addClass('open');
-        }
-        function share() {
-          if (navigator.share) {
-              navigator.share({
-                  title: 'Bortoman',
-                  text: 'Check out this awesome website!',
-                  url: 'https://bortoman.github.io',
-              })
-                  .then(() => $('footer button').html('Thanks!'))
-                  .catch((error) => console.log('Error sharing', error));
-          } else {
-              $('footer button').html(':(');
-          }
-        }
-
+         if(navigator.serviceWorker) {
+           navigator.serviceWorker.register('/sw.js').then(function(){console.log('serviceWorker registered');});
+         }
+         function addClassOpen(){
+           $('#projects').addClass('open');
+           $('.plink').addClass('open');
+           $('.obfuscate').addClass('open');
+           $('body').addClass('open');
+           $('.alink').removeClass('open');
+         }
+         function removeClassOpen(){
+           $('#projects').removeClass('open');
+           $('.plink').removeClass('open');
+           $('.obfuscate').removeClass('open');
+           $('body').removeClass('open')
+           $('.alink').addClass('open');
+         }
+         function share() {
+           if (navigator.share) {
+               navigator.share({
+                   title: 'Bortoman',
+                   text: 'Check out this awesome website!',
+                   url: 'https://bortoman.github.io',
+               })
+                   .then(() => $('footer button').html('Thanks!'))
+                   .catch((error) => console.log('Error sharing', error));
+           } else {
+               $('footer button').html(':(');
+           }
+         }
         </script>
-
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133044821-1"></script>
         <script>

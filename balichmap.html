@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balich WS Ground Transport</title>
+</head>
+
+<body>
+  
+
+  <main id="maincontent">
+    <section id="map-container" >
+          <div id="map" role='application'></div>
+    </section>
+  </main>
+
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6a0Cnx4DwgpGlWQzf3Yf7lCFXP-T8hJ8&libraries=places&callback=initMap"></script>
+  <script>
+    window.initMap = () => {
+    let loc = {
+        lat: 40.722216,
+        lng: -73.987501
+    };
+    self.map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: loc,
+        scrollwheel: false
+    });
+    }
+  </script>
+
+  <footer id="footer">
+    Copyright (c) 2019 <a href="/"><strong>Balich Worldwide Shows</strong></a> All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>

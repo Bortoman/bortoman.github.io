@@ -13,7 +13,6 @@
     <main id="maincontent" style="width: 100vw; height: 100vh">
             <div id="map" style="width: 100vw; height: 100vh" role='application'></div>
     </main>
-    <script type="text/javascript" src="addresses.json"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6a0Cnx4DwgpGlWQzf3Yf7lCFXP-T8hJ8&libraries=places&callback=initMap"></script>
     <script>
         window.initMap = () => {
@@ -22,15 +21,15 @@
                 lng: -77.056308
             };
             self.map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12,
+                zoom: 14,
                 center: loc,
                 scrollwheel: false
             });
-            let json = JSON.parse(addresses);
+            let json = JSON.parse('[{"Address":"Alcanfores240-502B","lat":-12.121662,"lng":-77.027721},{"Address":"2 de Mayo 524-602B","lat":-12.117965,"lng":-77.034006},{"Address":"27 de Noviembre 350-202","lat":-12.116711,"lng":-77.041096},{"Address":"28 de Julio 887-807","lat":-12.128777,"lng":-77.024833},{"Address":"28 de Julio 895-1104 B","lat":-12.128951,"lng":-77.024377},{"Address":"Alcanfores 1142-402","lat":-12.131097,"lng":-77.028299},{"Address":"Alcanfores 761-502B","lat":-12.127027,"lng":-77.028064},{"Address":"Arequipa 4856-401","lat":-12.114475,"lng":-77.029841},{"Address":"Av. 2 de Mayo 1375/602","lat":-12.092195,"lng":-77.044852},{"Address":"Av. del Ejercito 490/201A","lat":-12.098264,"lng":-77.068761},{"Address":"Av. José Pardo 570-206 ","lat":-12.119033,"lng":-77.034289},{"Address":"Av. La Paz 839-5 ","lat":-12.126405,"lng":-77.02695},{"Address":"Av. Pardo y Aliaga 616-802 San Isidro","lat":-12.106784,"lng":-77.038496},{"Address":"Av. Paseo de la República 4095-1809 Surquillo","lat":-12.106072,"lng":-77.026968},{"Address":"AV. Paseo de la República 5181-1902","lat":-12.116431,"lng":-77.025926},{"Address":"Av.José Pardo 1124-604","lat":-12.118936,"lng":-77.04061},{"Address":"Bolivar 140- S01","lat":-12.125623,"lng":-77.02882},{"Address":"Cantuarias 355-607","lat":-12.121383,"lng":-77.026222},{"Address":"Cesareo Chacaltana 448/401","lat":-12.115691,"lng":-77.039779},{"Address":"Dazzler Lima Hotel","lat":-12.119134,"lng":-77.037834},{"Address":"Diego Ferre 270-402","lat":-12.129496,"lng":-77.032212},{"Address":"Enrique Meiggs 199-201","lat":-12.111619,"lng":-77.03596},{"Address":"Ernesto Diez Canseco 374 804","lat":-12.122384,"lng":-77.027276},{"Address":"General Mendiburu 562-504","lat":-12.114928,"lng":-77.045315},{"Address":"General Vidal139-305","lat":-12.114512,"lng":-77.029244},{"Address":"Grau 391-203","lat":-12.122093,"lng":-77.03481},{"Address":"Grimaldo del Solar 450-704","lat":-12.126666,"lng":-77.025986},{"Address":"Hilton Garden Inn Surco","lat":-12.111828,"lng":-76.989581},{"Address":"Hotel Casa Andina","lat":-12.12331,"lng":-77.027294},{"Address":"Hotel Montreal","lat":-12.124472,"lng":-77.026878},{"Address":"Hotel Santa Cruz","lat":-12.116433,"lng":-77.041628},{"Address":"Hotel Selina","lat":-12.123976,"lng":-77.027738},{"Address":"Jirón López de Ayala 533-101","lat":-12.098389,"lng":-77.009018},{"Address":"Jirón Saenz Peña 241-503","lat":-12.09747,"lng":-77.070305},{"Address":"Jirón Saenz Peña 489 -603Magdalena del Mar","lat":-12.095143,"lng":-77.069482},{"Address":"José de la Torre Ugarte 468-501","lat":-12.11581,"lng":-77.042486},{"Address":"José Pardo 1357-903","lat":-12.119082,"lng":-77.042263},{"Address":"Jose Pardo 510-1204","lat":-12.119002,"lng":-77.033681},{"Address":"Jose Pardo 570-1102","lat":-12.11901,"lng":-77.034249},{"Address":"Juan Fanning 131-601","lat":-12.127991,"lng":-77.03425},{"Address":"La Paz 528-505","lat":-12.122679,"lng":-77.026817},{"Address":"Las Dalias 136-404","lat":-12.13075,"lng":-77.029001},{"Address":"Leonidas Avendaño 163-403","lat":-12.130772,"lng":-77.024145},{"Address":"Lord Cochrane 321-303 Miraflores ","lat":-12.108694,"lng":-77.039412},{"Address":"Malecon Armendariz 289 Dpto 1002","lat":-12.135123,"lng":-77.025406},{"Address":"Manuel Tovar 537-601","lat":-12.114566,"lng":-77.042637},{"Address":"Martin Napanga 295-504","lat":-12.12104,"lng":-77.040097},{"Address":"Narciso de la Colina 350-702","lat":-12.118318,"lng":-77.027137},{"Address":"NM Lima Hotel","lat":-12.107326,"lng":-77.035978},{"Address":"Puerto de Palos 169-2","lat":-12.103628,"lng":-77.036524},{"Address":"Reducto 1091-207","lat":-12.129105,"lng":-77.023686},{"Address":"Rodolfo Rutte 911- 601 Magdalena del Mar","lat":-12.08885,"lng":-77.061018},{"Address":"Samuel Márquez 149/402","lat":-12.133048,"lng":-77.022412},{"Address":"San Martín 727-802","lat":-12.127071,"lng":-77.026771},{"Address":"Santa Isabel 258-203","lat":-12.131305,"lng":-77.027589},{"Address":"Tarata 281-502","lat":-12.123505,"lng":-77.029302}]');
             for(let i in json) {
                 self.marker = new google.maps.Marker({
                     position: {'lat': json[i].lat, 'lng': json[i].lng},
-                    title: json[i].addresses,
+                    title: json[i].Address,
                     map: map,
                     animation: google.maps.Animation.DROP}
                 );

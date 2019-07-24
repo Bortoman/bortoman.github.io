@@ -30,8 +30,8 @@
             const lng = urlParams.get('lng');
             self.marker = new google.maps.Marker({
             position: {
-                'lat': lat,
-                'lng': lng,
+                'lat': parseFloat(lat),
+                'lng': parseFloat(lng),
             },
             title: 'marker',
             map: map,

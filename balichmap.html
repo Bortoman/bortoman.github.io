@@ -13,6 +13,7 @@
     <main id="maincontent" style="width: 100vw; height: 100vh">
             <div id="map" style="width: 100vw; height: 100vh" role='application'></div>
     </main>
+    <script type="text/javascript" src="addresses.json"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6a0Cnx4DwgpGlWQzf3Yf7lCFXP-T8hJ8&libraries=places&callback=initMap"></script>
     <script>
         window.initMap = () => {
@@ -25,18 +26,15 @@
                 center: loc,
                 scrollwheel: false
             });
-            const urlParams = new URLSearchParams(window.location.search);
-            const lat = urlParams.get('lat');
-            const lng = urlParams.get('lng');
-            self.marker = new google.maps.Marker({
-            position: {
-                'lat': parseFloat(lat),
-                'lng': parseFloat(lng),
-            },
-            title: 'marker',
-            map: map,
-            animation: google.maps.Animation.DROP}
-            );
+            let json = JSON.parse(addresses);
+            for(let i in json) {
+                self.marker = new google.maps.Marker({
+                    position: {'lat': json[i].lat, 'lng': json[i].lng},
+                    title: json[i].addresses,
+                    map: map,
+                    animation: google.maps.Animation.DROP}
+                );
+            }
         }
     </script>
 

@@ -36,6 +36,92 @@ Boring text...
   }
 }
 
+.share-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 35px
+}
+
+.share-button .s-btn {
+  position: absolute;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 0 3px 6px -2px rgba(41,0,0,.29);
+  transition: .4s cubic-bezier(.75,-.5,0,1.75)
+}
+
+.share-button .s-btn.share-action {
+  background-image: url(/img/ico_share.svg);
+  background-color: #f5f5f5;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  z-index: 4
+}
+
+.share-button .s-btn.share-action.open {
+  background-image: url(/img/ico_close_blue.svg);
+  background-size: 18px 18px;
+  -webkit-transform: rotate(1turn);
+  transform: rotate(1turn)
+}
+
+.share-button .s-btn.facebook {
+  z-index: 3;
+  background: url(/img/001-facebook-logo.svg);
+  background-color: #3b5999;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition-delay: 20ms;
+  opacity: 0
+}
+
+.share-button .s-btn.facebook.open {
+  opacity: 1;
+  -webkit-transform: translateX(55px) rotate(1turn);
+  transform: translateX(55px) rotate(1turn)
+}
+
+.share-button .s-btn.twitter {
+  background: url(/img/003-twitter-logo-silhouette.svg);
+  background-color: #55acee;
+  z-index: 2;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition-delay: 40ms;
+  opacity: 0
+}
+
+.share-button .s-btn.twitter.open {
+  opacity: 1;
+  -webkit-transform: translateX(110px) rotate(1turn);
+  transform: translateX(110px) rotate(1turn)
+}
+
+.share-button .s-btn.whatsapp {
+  opacity: 0;
+  background: url(/img/002-whatsapp.svg);
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: #25d366;
+  z-index: 1;
+  transition-delay: 60ms
+}
+
+.share-button .s-btn.whatsapp.open {
+  opacity: 1;
+  -webkit-transform: translateX(165px) rotate(1turn);
+  transform: translateX(165px) rotate(1turn)
+}
+
 body, html, code {
   scroll-behavior: smooth;
   scrollbar-color: red lightgray;
@@ -68,6 +154,17 @@ body.open{
 a{
   color: red;
 }
+a.donate {
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+  padding: 3px 5px;
+  text-decoration: none;
+  transition: .3s;
+}
+a.donate:hover {
+  background-color: lightcoral;
+}
 code{
   width: 100%;
   font-family: 'PT Mono', monospace;
@@ -75,6 +172,12 @@ code{
   display: block;
   margin: 16px auto;
   overflow-x: scroll;
+}
+.stack-code-block {
+  background-color: bisque;
+  border-radius: 3px;
+  padding: 1px 3px;
+  font-family: 'PT Mono', monospace;
 }
 main, .innerFooter{
   padding-left: 5px;
@@ -248,6 +351,7 @@ main, .innerFooter{
 .webnav img{
   width: 100%;
   height: 100%;
+  object-fit: scale-down;
 }
 .ueimg{
   width: 100%;

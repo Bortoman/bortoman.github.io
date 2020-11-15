@@ -43,6 +43,7 @@ body, html {
 }
 
 body{
+  position: relative;
   font-family: Circular;
   color: #34d058;
   margin:0;
@@ -68,6 +69,10 @@ a{
 }
 code{
   font-size:8pt;
+}
+main {
+  padding-bottom: 150px;
+  min-height: calc(100vh - 207px);
 }
 main, .innerFooter{
   padding-left: 5px;
@@ -152,10 +157,10 @@ main, .innerFooter{
   padding-top: 40px;
   background-color: #282E32;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 81px);
   top: 41px;
   transition: ease 0.5s;
-  transform: translate(-768px,0);
+  transform: translate(-100%,0);
   z-index: 9;
 }
 #projects.open{
@@ -258,7 +263,7 @@ footer{
   text-align: center;
   height: 150px;
   background-color: #34d058;
-  display: absolute;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }

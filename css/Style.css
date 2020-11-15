@@ -132,6 +132,7 @@ body, html, code {
 }
 
 body{
+  position: relative;
   font-family: Circular;
   color: graytext;
   margin:0;
@@ -178,6 +179,10 @@ code{
   border-radius: 3px;
   padding: 1px 3px;
   font-family: 'PT Mono', monospace;
+}
+main {
+  padding-bottom: 150px;
+  min-height: calc(100vh - 226px);
 }
 main, .innerFooter{
   padding-left: 5px;
@@ -269,10 +274,10 @@ main, .innerFooter{
   padding-top: 40px;
   background-color: white;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 81px);
   top: 41px;
   transition: ease 0.5s;
-  transform: translate(-768px,0);
+  transform: translate(-100%,0);
   z-index: 9;
 }
 #projects.open{
@@ -380,7 +385,7 @@ footer{
   text-align: center;
   height: 150px;
   background-color: red;
-  display: absolute;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }

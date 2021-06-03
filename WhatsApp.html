@@ -34,6 +34,19 @@
           $('#aboutme').addClass('open');
           $('.alink').addClass('open');
         }
+        function share() {
+          if (navigator.share) {
+              navigator.share({
+                  title: 'WhatsApp Automatic Notification Script',
+                  text: 'Learn how to build a script in NodeJS to send automated messages using Puppeteer.js',
+                  url: 'https://bortoman.github.io/WhatsApp.html',
+              })
+                  .then(() => $('footer button').html('Thanks!'))
+                  .catch((error) => console.log('Error sharing', error));
+          } else {
+              $('footer button').html(':(');
+          }
+        }
         </script>
     </head>
     <body>
@@ -341,6 +354,7 @@ fetch(`http://mydomain.com/consume-notification?pk=${notification.pk}&code=${cod
                 <a href='https://github.com/Bortoman'><img src="img/25231.svg"/></a>
               </div>
             </div>
+            <button type='button' onclick="share()">Share it</button>
         </footer>
     </body>
 </html>

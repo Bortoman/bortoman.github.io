@@ -225,8 +225,6 @@ main, .innerFooter{
   display: flex;
   flex-wrap: wrap;
 }
-.webnav a{
-}
 .p-list {
   list-style-type: square;
 }

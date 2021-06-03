@@ -181,7 +181,7 @@ main, .innerFooter{
   color: #282E32;
 }
 #projects li:hover{
-  background-color: hsla(0,0%,100%,.7);
+  background-color: #2f4f4f;
 }
 #projects li.security:hover {
   background-color: unset;

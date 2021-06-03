@@ -194,7 +194,7 @@ code{
 }
 main {
   padding-bottom: 150px;
-  min-height: calc(100vh - 226px);
+  min-height: calc(100vh - 150px);
 }
 main, .innerFooter{
   padding-left: 5px;

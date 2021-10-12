@@ -80,13 +80,13 @@
             The Goal
             </h3>
               <p>
-                Automate messaging operations to known WhatsApp contacts leveraging the <a href="https://developers.google.com/web/tools/puppeteer/">Puppeteer.js</a> browser automation library and web WhatsApp capabilities
+                Automate messaging operations to known WhatsApp contacts with <a href="https://developers.google.com/web/tools/puppeteer/">Puppeteer.js</a> and web WhatsApp.
               </p>
               <p>
-              We will use nodeJS to run our script and a rest API to control the notification queue flow: getting the notification information and saving the status of the WhatsApp message. These 2 endpoints will suffice our requirements to achieve the goal.
+              NodeJS will run the script and a rest API will control the notification queue flow: getting the notification information and saving the message status.
               </p>
               <p>
-              For this script, the notification returned by the API will be a JSON object with the following structure:
+              For this script, we'll be using a JSON notification with the following structure:
               </p>
               <code>
                 
@@ -109,19 +109,19 @@
             Dealing with async functions in Javascript
             </h3>
               <p>
-                The script operates with a lot of external components therefore we will need to encapsulate in try-catches our asynchronous operations between them. In this way we can control the flow of our application if an error happens and use those exception to decide what to do next.
+                The script operates with external events. Therefore we will need to encapsulate in try-catches our asynchronous operations. In this way we can control the flow of our application if an error happens and use those exception to decide what to do next.
               </p>
               <p>
-              <a href="https://developers.google.com/web/tools/puppeteer/">Puppeteer.js</a> is a library for browser automation, every function we run is asynchronous and can fail for various reasons. It is always a good idea to log what the script is doing and if it run over an exception.
+              <a href="https://developers.google.com/web/tools/puppeteer/">Puppeteer.js</a> is a library for browser automation, every function we run is asynchronous and might fail for several reasons. It is always a good idea to log what the script is doing in the Node terminal.
               </p>
               <hr class="hr-par">
               <h3>
 Navigating to WhatsApp web using Puppeteer.js</h3>
               <p>
-              As you can follow in the code below, we will launch puppeteer instance. Once the page is loaded we will have to read the QR code using our WhatsApp App to authenticate the session. Our script will allow 30 seconds to complete this operation.
+              As you can follow in the code below, we will launch puppeteer instance. Let's now read the QR code with our WhatsApp application to authenticate the session. Our script will allow 30 seconds to complete this operation.
               </p>
               <p>
-              To check wether the page loaded correctly we will look for a fundamental element of the WhatsApp we interface: the chat search box. Identified by the code <span class="stack-code-block">_1awRl</span>.
+              To check whether the page loaded correctly we will look for a fundamental element of the WhatsApp interface: the chat search box. Identified by the code <span class="stack-code-block">_1awRl</span>.
               </p>
               <code>
                 <pre>
@@ -170,9 +170,9 @@ Navigating to WhatsApp web using Puppeteer.js</h3>
             REST API Polling
             </h3>
               <p>
-The recursion of our script will be based on the call result of the list-notifications endpoint:              </p>
+The recursion of our script will be based on the list-notifications endpoint response:              </p>
               <p>
-If no notifications are returned by our API the queue is empty so we will retry to fetch in 30 seconds              <br/>
+If no notifications are returned by our API, the queue is empty so we will retry in 30 seconds              <br/>
 If the server is down and the connection was refused, we will retry in a minute.             
  </p>
  <p>
@@ -213,11 +213,11 @@ If the server is down and the connection was refused, we will retry in a minute.
             The Base Case
             </h3>
             <h4>
-            Searching by the number
+            Searching by the phone number
             </h4>
               <p>
-              The first operation is to look for a contact in our WhatsApp web interface whose number is or look alike to the one contained in the notification object passed by our Rest API.
-Since this is a recursive operation It’s a good idea to start erasing everything in the searchbox.
+              The first operation is to look for a contact in our WhatsApp web interface.
+Since this is a recursive operation, it’s a good idea to erase everything in the searchbox beforehand.
             </p>
               <p>
 Now we can paste the contact number in the searchbox using the <span class="stack-code-block">keyboard.type()</span> method </p>
@@ -254,7 +254,7 @@ The web WhatsApp interface will start the search. Now the code flow will split i
  Contact not found
  </h4>
  <p>
- The WhatsApp interface will show the message "No chats found", so we will enter in the "then" branch
+ The WhatsApp interface will show the message "No chats found", so we will enter in the "then" branch.
  </p>
  <p>
 In this case the script will update the notification status in the system using the proper endpoint and the recursion step will end. This process is described further here: <a href="#consuming-the-queue">Consuming the queue</a>.
@@ -274,17 +274,17 @@ fetch(`http://mydomain.com/consume-notification?pk=${notification.pk}&code=${cod
  </code>
  <hr class="hr-par">
   <h4>
- A contact was found
+Contact found
  </h4>
  <p>
-Good news, we have this contact in our WhatsApp contacts and we can send a message! 
+Good news! WhatsApp knows this contact and we can send him/her a message! 
  </p>
  <p>
  But first, let's do a quick recap on how web WhatsApp interface works: <br/>
-Once the search operation is concluded we can navigate to the first contact in the found list by using <kbd>TAB</kbd> and selecting it by using <kbd>ENTER</kbd>. Once selected, the interface will open the corresponding chat targeting our input focus on the message bar. This means we are ready to type our message. Finally we can send it by pressing <kbd>ENTER</kbd> one more time. 
+Once the search operation is concluded, we can navigate to the first contact in the found list by using <kbd>TAB</kbd>, and selecting it by using <kbd>ENTER</kbd>. Once selected, the interface will open the corresponding chat targeting our "input focus" on the message bar. This means we are ready to type our message. Finally we can send it by pressing <kbd>ENTER</kbd> one more time. 
  </p>
  <p>
- The above key combination ensures to select the first element in the found list if there is any and to send him/her a message. Let’s always consider this is a web platform so we should expect a slight delay for the input-output, hence the timeouts in the code.
+ The above key combination ensures to select the first element in the found list, if any, and to send him/her a message. Let’s always consider this is a web platform so we should expect a slight delay for the input-output, hence the timeouts in the code.
  </p>
               <code>
                 <pre>
@@ -303,7 +303,7 @@ setTimeout(()=> {console.log('..waited some milliseconds'), 1000});
 Pasting the message
  </h4>
  <p>
-In order to simulate the writing procedure we can pass the optional parameter ‘delay’ to the <span class="stack-code-block">keyboard.type()</span> method. This will help to simulate better a human interaction, decreasing the issues with our script due to network delay. For this example I used a delay of 10, you can test with different values to adjust the tradeoff between script stability and notification process completion rate.
+In order to simulate the writing procedure we can pass the optional parameter ‘delay’ to the <span class="stack-code-block">keyboard.type()</span> method. This will help to simulate better a human interaction, decreasing the issues with our script due to network delay. For this example I used a delay of 10, you can test with different values to adjust the tradeoff between script stability and notification throughput.
  </p>
               <code>
                 <pre>
@@ -317,7 +317,7 @@ console.log('pasting message...');
 Consuming the queue
  </h4>
  <p>
- Either our message was saved successfully or not we should communicate this to the server in order to complete our notification process. Our rest API has an endpoint which allow us to save the status of a notification message. In this way we can have a specific log for the consumed messages. We can use this to retry the notification messages or notify our users with different means (email for example).
+ Either our message was saved successfully or not, we should communicate this to the server in order to carry on with our notification process. Our rest API has an endpoint which allow us to save the status of a notification message. In this way we can have a specific log for the consumed messages. We can use this to retry the notification messages, or notify our users with different means (email for example).
  </p>
               <code>
                 <pre>

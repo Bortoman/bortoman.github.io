@@ -3,93 +3,96 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js" lang="">   <![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Bortoman</title>
-        <meta name="description" content="Whatsapp Automation with NodeJS">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta data-react-helmet="true" name="theme-color" content="red"/>
-        <link rel="icon" href="css/BortomanGitHub.png">
-        <link rel="stylesheet" href="css/Style.css">
 
-        <link rel="stylesheet" href="galleria/themes/classic/galleria.classic.css">
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
-        <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Bortoman</title>
+  <meta name="description" content="Whatsapp Automation with NodeJS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta data-react-helmet="true" name="theme-color" content="red" />
+  <link rel="icon" href="css/BortomanGitHub.png">
+  <link rel="stylesheet" href="css/Style.css">
 
-        <script>
-        function addClassOpen(){
-          $('#projects').addClass('open');
-          $('.plink').addClass('open');
-          $('.obfuscate').addClass('open');
-          $('body').addClass('open');
-          $('#aboutme').removeClass('open');
-          $('.alink').removeClass('open');
-        }
-        function removeClassOpen(){
-          $('#projects').removeClass('open');
-          $('.plink').removeClass('open');
-          $('.obfuscate').removeClass('open');
-          $('body').removeClass('open')
-          $('#aboutme').addClass('open');
-          $('.alink').addClass('open');
-        }
-        function share() {
-          if (navigator.share) {
-              navigator.share({
-                  title: 'WhatsApp Automatic Notification Script',
-                  text: 'Learn how to build a script in NodeJS to send automated messages using Puppeteer.js',
-                  url: 'https://bortoman.github.io/WhatsApp.html',
-              })
-                  .then(() => $('footer button').html('Thanks!'))
-                  .catch((error) => console.log('Error sharing', error));
-          } else {
-              $('footer button').html(':(');
-          }
-        }
-        </script>
-    </head>
-    <body>
-        <div class="header_content">
-            <ul>
-                <li><a class='plink' onclick='addClassOpen()'>Projects</a></li>
-                <li><a class='alink open' onclick='removeClassOpen()'>WhatsApp</a></li>
-                <li><a class='home' href="index.html">Home</a></li>
-            </ul>
-        </div>
-        <div class='obfuscate' onclick="removeClassOpen()">
-        </div>
-        <div id='projects'>
-          <ul>
-            <li><a href="VR.html">VR</a></li>
-            <li><a href="Web.html">Web</a></li>
-            <li><a href="WhatsApp.html">WhatsApp</a></li>
-            <li><a href="Mobile.html">Mobile</a></li>
-            <li><a href="Ue4.html">Ue4</a></li>
-            <li><a href="Thesis.html">Thesis</a></li>
-          </ul>
-        </div>
-        <main>
-          <h1>WhatsApp Automatic Notification Script in NodeJS</h1>
-          <h2>Browser automation for WhatsApp web</h2>
-          <h4>A brief write-up for the <a href="https://github.com/Bortoman/whatsapp_notifier_nodejs">whatsapp_notifier_nodejs</a> script</h4>
-          
-          <div class="row">
-            <div class="text-col-wide">
-            <h3>
-            The Goal
-            </h3>
-              <p>
-                Automate messaging operations to known WhatsApp contacts with <a href="https://developers.google.com/web/tools/puppeteer/">Puppeteer.js</a> and web WhatsApp.
-              </p>
-              <p>
-              NodeJS will run the script and a rest API will control the notification queue flow: getting the notification information and saving the message status.
-              </p>
-              <p>
-              For this script, we'll be using a JSON notification with the following structure:
-              </p>
-              <code>
-                
+  <link rel="stylesheet" href="galleria/themes/classic/galleria.classic.css">
+  <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+
+  <script>
+    function addClassOpen() {
+      $('#projects').addClass('open');
+      $('.plink').addClass('open');
+      $('.obfuscate').addClass('open');
+      $('body').addClass('open');
+      $('#aboutme').removeClass('open');
+      $('.alink').removeClass('open');
+    }
+    function removeClassOpen() {
+      $('#projects').removeClass('open');
+      $('.plink').removeClass('open');
+      $('.obfuscate').removeClass('open');
+      $('body').removeClass('open')
+      $('#aboutme').addClass('open');
+      $('.alink').addClass('open');
+    }
+    function share() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'WhatsApp Automatic Notification Script',
+          text: 'Learn how to build a script in NodeJS to send automated messages using Puppeteer.js',
+          url: 'https://bortoman.github.io/WhatsApp.html',
+        })
+          .then(() => $('footer button').html('Thanks!'))
+          .catch((error) => console.log('Error sharing', error));
+      } else {
+        $('footer button').html(':(');
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="header_content">
+    <ul>
+      <li><a class='plink' onclick='addClassOpen()'>Projects</a></li>
+      <li><a class='alink open' onclick='removeClassOpen()'>WhatsApp</a></li>
+      <li><a class='home' href="index.html">Home</a></li>
+    </ul>
+  </div>
+  <div class='obfuscate' onclick="removeClassOpen()">
+  </div>
+  <div id='projects'>
+    <ul>
+      <li><a href="ComputerGraphics.html">ComputerGraphics</a></li>
+      <li><a href="Web.html">Web</a></li>
+      <li><a href="WhatsApp.html">WhatsApp</a></li>
+      <li><a href="Mobile.html">Mobile</a></li>
+      <li class="security"><a href="Security.html">Security</a></li>
+    </ul>
+  </div>
+  <main>
+    <h1>WhatsApp Automatic Notification Script in NodeJS</h1>
+    <h2>Browser automation for WhatsApp web</h2>
+    <h4>A brief write-up for the <a
+        href="https://github.com/Bortoman/whatsapp_notifier_nodejs">whatsapp_notifier_nodejs</a> script</h4>
+
+    <div class="row">
+      <div class="text-col-wide">
+        <h3>
+          The Goal
+        </h3>
+        <p>
+          Automate messaging operations to known WhatsApp contacts with <a
+            href="https://developers.google.com/web/tools/puppeteer/">Puppeteer.js</a> and web WhatsApp.
+        </p>
+        <p>
+          NodeJS will run the script and a rest API will control the notification queue flow: getting the notification
+          information and saving the message status.
+        </p>
+        <p>
+          For this script, we'll be using a JSON notification with the following structure:
+        </p>
+        <code>
+
                 <pre>
 {
     pk: int,
@@ -100,30 +103,36 @@
 }
 </pre>
               </code>
-            </div>
-          </div>
-          <hr class="hr-par">
-          <div class="row">
-            <div class="text-col-wide">
-            <h3>
-            Dealing with async functions in Javascript
-            </h3>
-              <p>
-                The script operates with external events. Therefore we will need to encapsulate in try-catches our asynchronous operations. In this way we can control the flow of our application if an error happens and use those exception to decide what to do next.
-              </p>
-              <p>
-              <a href="https://developers.google.com/web/tools/puppeteer/">Puppeteer.js</a> is a library for browser automation, every function we run is asynchronous and might fail for several reasons. It is always a good idea to log what the script is doing in the Node terminal.
-              </p>
-              <hr class="hr-par">
-              <h3>
-Navigating to WhatsApp web using Puppeteer.js</h3>
-              <p>
-              As you can follow in the code below, we will launch puppeteer instance. Let's now read the QR code with our WhatsApp application to authenticate the session. Our script will allow 30 seconds to complete this operation.
-              </p>
-              <p>
-              To check whether the page loaded correctly we will look for a fundamental element of the WhatsApp interface: the chat search box. Identified by the code <span class="stack-code-block">_1awRl</span>.
-              </p>
-              <code>
+      </div>
+    </div>
+    <hr class="hr-par">
+    <div class="row">
+      <div class="text-col-wide">
+        <h3>
+          Dealing with async functions in Javascript
+        </h3>
+        <p>
+          The script operates with external events. Therefore we will need to encapsulate in try-catches our
+          asynchronous operations. In this way we can control the flow of our application if an error happens and use
+          those exception to decide what to do next.
+        </p>
+        <p>
+          <a href="https://developers.google.com/web/tools/puppeteer/">Puppeteer.js</a> is a library for browser
+          automation, every function we run is asynchronous and might fail for several reasons. It is always a good idea
+          to log what the script is doing in the Node terminal.
+        </p>
+        <hr class="hr-par">
+        <h3>
+          Navigating to WhatsApp web using Puppeteer.js</h3>
+        <p>
+          As you can follow in the code below, we will launch puppeteer instance. Let's now read the QR code with our
+          WhatsApp application to authenticate the session. Our script will allow 30 seconds to complete this operation.
+        </p>
+        <p>
+          To check whether the page loaded correctly we will look for a fundamental element of the WhatsApp interface:
+          the chat search box. Identified by the code <span class="stack-code-block">_1awRl</span>.
+        </p>
+        <code>
                 <pre>
 <span class="code_highlight_lang">const</span> puppeteer = require('puppeteer');
 <span class="code_highlight_lang">const</span> fetch = require('node-fetch');
@@ -161,24 +170,25 @@ Navigating to WhatsApp web using Puppeteer.js</h3>
 })();
 </pre>
               </code>
-            </div>
-          </div>  
-          <hr class="hr-par">
-          <div class="row">
-            <div class="text-col-wide">
-            <h3>
-            REST API Polling
-            </h3>
-              <p>
-The recursion of our script will be based on the list-notifications endpoint response:              </p>
-              <p>
-If no notifications are returned by our API, the queue is empty so we will retry in 30 seconds              <br/>
-If the server is down and the connection was refused, we will retry in a minute.             
- </p>
- <p>
- This is a good boilerplate to start catching different exceptions and make our script smarter and more interactive:
- </p>
-              <code>
+      </div>
+    </div>
+    <hr class="hr-par">
+    <div class="row">
+      <div class="text-col-wide">
+        <h3>
+          REST API Polling
+        </h3>
+        <p>
+          The recursion of our script will be based on the list-notifications endpoint response: </p>
+        <p>
+          If no notifications are returned by our API, the queue is empty so we will retry in 30 seconds <br />
+          If the server is down and the connection was refused, we will retry in a minute.
+        </p>
+        <p>
+          This is a good boilerplate to start catching different exceptions and make our script smarter and more
+          interactive:
+        </p>
+        <code>
                 <pre>
 <span class="code_highlight_lang">const</span> recursiveFetch = <span class="code_highlight_lang">async</span> <span class="code_highlight_lang">function</span> () {
     fetch("http://mydomain.com/list-notifications").then(response => {
@@ -204,27 +214,29 @@ If the server is down and the connection was refused, we will retry in a minute.
 } 
 </pre>
               </code>
-            </div>
-          </div>
-          <hr class="hr-par">
-          <div class="row">
-            <div class="text-col-wide">
-            <h3>
-            The Base Case
-            </h3>
-            <h4>
-            Searching by the phone number
-            </h4>
-              <p>
-              The first operation is to look for a contact in our WhatsApp web interface.
-Since this is a recursive operation, it’s a good idea to erase everything in the searchbox beforehand.
-            </p>
-              <p>
-Now we can paste the contact number in the searchbox using the <span class="stack-code-block">keyboard.type()</span> method </p>
-<p>
-The web WhatsApp interface will start the search. Now the code flow will split in two: contact found, contact not found.          
- </p>
-<code>
+      </div>
+    </div>
+    <hr class="hr-par">
+    <div class="row">
+      <div class="text-col-wide">
+        <h3>
+          The Base Case
+        </h3>
+        <h4>
+          Searching by the phone number
+        </h4>
+        <p>
+          The first operation is to look for a contact in our WhatsApp web interface.
+          Since this is a recursive operation, it’s a good idea to erase everything in the searchbox beforehand.
+        </p>
+        <p>
+          Now we can paste the contact number in the searchbox using the <span
+            class="stack-code-block">keyboard.type()</span> method </p>
+        <p>
+          The web WhatsApp interface will start the search. Now the code flow will split in two: contact found, contact
+          not found.
+        </p>
+        <code>
                 <pre>
 <span class="code_highlight_all">for</span> (notification <span class="code_highlight_lang">of</span> notifications) {
     console.log('Searching for the contact');
@@ -248,18 +260,20 @@ The web WhatsApp interface will start the search. Now the code flow will split i
 }
             </pre>
             </code>
-            <hr class="hr-par">
-            
- <h4>
- Contact not found
- </h4>
- <p>
- The WhatsApp interface will show the message "No chats found", so we will enter in the "then" branch.
- </p>
- <p>
-In this case the script will update the notification status in the system using the proper endpoint and the recursion step will end. This process is described further here: <a href="#consuming-the-queue">Consuming the queue</a>.
- </p>
- <code>
+        <hr class="hr-par">
+
+        <h4>
+          Contact not found
+        </h4>
+        <p>
+          The WhatsApp interface will show the message "No chats found", so we will enter in the "then" branch.
+        </p>
+        <p>
+          In this case the script will update the notification status in the system using the proper endpoint and the
+          recursion step will end. This process is described further here: <a href="#consuming-the-queue">Consuming the
+            queue</a>.
+        </p>
+        <code>
  <pre>
 console.log("no contacts found...");
 <span class="code_highlight_lang">const</span> code = 404;
@@ -272,21 +286,26 @@ fetch(`http://mydomain.com/consume-notification?pk=${notification.pk}&code=${cod
 });
  </pre>
  </code>
- <hr class="hr-par">
-  <h4>
-Contact found
- </h4>
- <p>
-Good news! WhatsApp knows this contact and we can send him/her a message! 
- </p>
- <p>
- But first, let's do a quick recap on how web WhatsApp interface works: <br/>
-Once the search operation is concluded, we can navigate to the first contact in the found list by using <kbd>TAB</kbd>, and selecting it by using <kbd>ENTER</kbd>. Once selected, the interface will open the corresponding chat targeting our "input focus" on the message bar. This means we are ready to type our message. Finally we can send it by pressing <kbd>ENTER</kbd> one more time. 
- </p>
- <p>
- The above key combination ensures to select the first element in the found list, if any, and to send him/her a message. Let’s always consider this is a web platform so we should expect a slight delay for the input-output, hence the timeouts in the code.
- </p>
-              <code>
+        <hr class="hr-par">
+        <h4>
+          Contact found
+        </h4>
+        <p>
+          Good news! WhatsApp knows this contact and we can send him/her a message!
+        </p>
+        <p>
+          But first, let's do a quick recap on how web WhatsApp interface works: <br />
+          Once the search operation is concluded, we can navigate to the first contact in the found list by using
+          <kbd>TAB</kbd>, and selecting it by using <kbd>ENTER</kbd>. Once selected, the interface will open the
+          corresponding chat targeting our "input focus" on the message bar. This means we are ready to type our
+          message. Finally we can send it by pressing <kbd>ENTER</kbd> one more time.
+        </p>
+        <p>
+          The above key combination ensures to select the first element in the found list, if any, and to send him/her a
+          message. Let’s always consider this is a web platform so we should expect a slight delay for the input-output,
+          hence the timeouts in the code.
+        </p>
+        <code>
                 <pre>
 console.log('we have contacts matching search criteria: timeout');
 console.log('taking first contact found...');
@@ -298,28 +317,35 @@ setTimeout(()=> {console.log('..waited some milliseconds'), 1000});
 
 </pre>
               </code>
-              <hr class="hr-par">
-            <h4>
-Pasting the message
- </h4>
- <p>
-In order to simulate the writing procedure we can pass the optional parameter ‘delay’ to the <span class="stack-code-block">keyboard.type()</span> method. This will help to simulate better a human interaction, decreasing the issues with our script due to network delay. For this example I used a delay of 10, you can test with different values to adjust the tradeoff between script stability and notification throughput.
- </p>
-              <code>
+        <hr class="hr-par">
+        <h4>
+          Pasting the message
+        </h4>
+        <p>
+          In order to simulate the writing procedure we can pass the optional parameter ‘delay’ to the <span
+            class="stack-code-block">keyboard.type()</span> method. This will help to simulate better a human
+          interaction, decreasing the issues with our script due to network delay. For this example I used a delay of
+          10, you can test with different values to adjust the tradeoff between script stability and notification
+          throughput.
+        </p>
+        <code>
                 <pre>
 console.log('pasting message...');
 <span class="code_highlight_all">await</span> page.keyboard.type(c.fields.message, {delay: 10});
 <span class="code_highlight_all">await</span> page.keyboard.press('Enter');
 </pre>
               </code>
-              
-              <h4 id="consuming-the-queue">
-Consuming the queue
- </h4>
- <p>
- Either our message was saved successfully or not, we should communicate this to the server in order to carry on with our notification process. Our rest API has an endpoint which allow us to save the status of a notification message. In this way we can have a specific log for the consumed messages. We can use this to retry the notification messages, or notify our users with different means (email for example).
- </p>
-              <code>
+
+        <h4 id="consuming-the-queue">
+          Consuming the queue
+        </h4>
+        <p>
+          Either our message was saved successfully or not, we should communicate this to the server in order to carry
+          on with our notification process. Our rest API has an endpoint which allow us to save the status of a
+          notification message. In this way we can have a specific log for the consumed messages. We can use this to
+          retry the notification messages, or notify our users with different means (email for example).
+        </p>
+        <code>
                 <pre>
 <span class="code_highlight_lang">const</span> code = 200;
 fetch(`http://mydomain.com/consume-notification?pk=${notification.pk}&code=${code}`).then(response => {
@@ -331,30 +357,32 @@ fetch(`http://mydomain.com/consume-notification?pk=${notification.pk}&code=${cod
 });
 </pre>
               </code>
-            </div>
-          </div> 
-          <hr class="hr-par">
-          <div class="text-col-wide">
-            <h3>
-            The Code
-            </h3>
-              <p>
-                Please find <a href="https://github.com/Bortoman/whatsapp_notifier_nodejs">here</a> the Github repository with the full code. Feel free to use it and contribute.
-              </p>
-            </div>
-          </div>
-        </main>
-        <footer>
-            <div class='innerFooter'>
-              <p class="made-with">Made with ♥ at 3 AM | </p>
-              <div class='social'>
-                <a href='mailto:alessandro.mainas@hotmail.it'><img src="img/email.svg"/></a>
-                <a href='https://www.linkedin.com/in/alessandromainas/'><img src="img/linkedin.png"/></a>
-                <a href='https://stackoverflow.com/users/7453656/alessandro'><img src="img/stackoverflow.png"/></a>
-                <a href='https://github.com/Bortoman'><img src="img/25231.svg"/></a>
-              </div>
-            </div>
-            <button type='button' onclick="share()">Share it</button>
-        </footer>
-    </body>
+      </div>
+    </div>
+    <hr class="hr-par">
+    <div class="text-col-wide">
+      <h3>
+        The Code
+      </h3>
+      <p>
+        Please find <a href="https://github.com/Bortoman/whatsapp_notifier_nodejs">here</a> the Github repository with
+        the full code. Feel free to use it and contribute.
+      </p>
+    </div>
+    </div>
+  </main>
+  <footer>
+    <div class='innerFooter'>
+      <p class="made-with">Made with ♥ at 3 AM | </p>
+      <div class='social'>
+        <a href='mailto:alessandro.mainas@hotmail.it'><img src="img/email.svg" /></a>
+        <a href='https://www.linkedin.com/in/alessandromainas/'><img src="img/linkedin.png" /></a>
+        <a href='https://stackoverflow.com/users/7453656/alessandro'><img src="img/stackoverflow.png" /></a>
+        <a href='https://github.com/Bortoman'><img src="img/25231.svg" /></a>
+      </div>
+    </div>
+    <button type='button' onclick="share()">Share it</button>
+  </footer>
+</body>
+
 </html>

@@ -181,7 +181,7 @@ a.donate:hover {
 code{
   width: 100%;
   font-family: 'PT Mono', monospace;
-  font-size: 8pt;
+  font-size: 10pt;
   display: block;
   margin: 16px auto;
   overflow-x: scroll;
@@ -231,7 +231,7 @@ main, .innerFooter{
   margin-right: auto;
 }
 .header_content li{
-  font-size: 18px;
+  font-size: 20px;
   display: inline;
   padding: 18px;
 }
@@ -306,14 +306,14 @@ main, .innerFooter{
   overflow: hidden;
   position: relative;
 }
-#projects li.security a {
-  color: white;
-}
 #projects li:hover{
   background-color: whitesmoke;
 }
 #projects li.security:hover {
   background-color: unset;
+}
+#projects li.security:hover a {
+  color: white;
 }
 #projects li.security:hover:before{
   content: '';
@@ -361,8 +361,8 @@ main, .innerFooter{
 }
 .webel{
   font-weight: bold;
-  font-size: 1.1em;
-  width: 50%;
+  font-size: 20px;
+  flex: 1;
   text-align: center;
 }
 .webnav img{
@@ -457,9 +457,6 @@ footer button:active {
   text-decoration: underline;
 }
 @media screen and (min-width: 620px){
-  .webel{
-    width:25%;
-  }
   code {
     overflow-x: hidden;
   }
@@ -536,10 +533,9 @@ footer button:active {
    display: flex;
    flex-direction: column;
  }
- .webel{
-   width:25%;
- }
 }
 @media screen and (min-width: 1024px){
-
+  main {
+    font-size: 20px;
+  }
 }

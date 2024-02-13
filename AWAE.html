@@ -1,0 +1,195 @@
+<!doctype html>
+<!--
+ ________  ________  ________  _________  ________  _____ ______   ________  ________
+|\   __  \|\   __  \|\   __  \|\___   ___\\   __  \|\   _ \  _   \|\   __  \|\   ___  \
+\ \  \|\ /\ \  \|\  \ \  \|\  \|___ \  \_\ \  \|\  \ \  \\\__\ \  \ \  \|\  \ \  \\ \  \
+ \ \   __  \ \  \\\  \ \   _  _\   \ \  \ \ \  \\\  \ \  \\|__| \  \ \   __  \ \  \\ \  \
+  \ \  \|\  \ \  \\\  \ \  \\  \|   \ \  \ \ \  \\\  \ \  \    \ \  \ \  \ \  \ \  \\ \  \
+   \ \_______\ \_______\ \__\\ _\    \ \__\ \ \_______\ \__\    \ \__\ \__\ \__\ \__\\ \__\
+    \|_______|\|_______|\|__|\|__|    \|__|  \|_______|\|__|     \|__|\|__|\|__|\|__| \|__|
+-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js" lang="">   <![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Bortoman</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta data-react-helmet="true" name="theme-color" content="#34d058"/>
+        <link rel="icon" href="css/BortomanGitHub.png">
+        <link rel="stylesheet" href="css/StyleSec.css">
+        <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+
+        <script>
+        function addClassOpen(){
+          $('#projects').addClass('open');
+          $('.plink').addClass('open');
+          $('.obfuscate').addClass('open');
+          $('body').addClass('open');
+          $('.alink').removeClass('open');
+        }
+        function removeClassOpen(){
+          $('#projects').removeClass('open');
+          $('.plink').removeClass('open');
+          $('.obfuscate').removeClass('open');
+          $('body').removeClass('open')
+          $('.alink').addClass('open');
+        }
+        function share() {
+          if (navigator.share) {
+              navigator.share({
+                  title: 'OffSec AWAE Insights and Experience',
+                  text: 'Check out Bortoman\'s story about the OffSec AWAE exam!',
+                  url: 'https://bortoman.github.io/ThesisSecurity.html',
+              })
+                  .then(() => $('footer button').html('Thanks!'))
+                  .catch((error) => console.log('Error sharing', error));
+          } else {
+              $('footer button').html(':(');
+          }
+        }
+
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133044821-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-133044821-1');
+        </script>
+    </head>
+    <body>
+        <div class="header_content">
+            <ul>
+                <li><a class='plink' onclick='addClassOpen()'>Projects</a></li>
+                <li><a class='alink open' onclick='removeClassOpen()'>AWAE</a></li>
+                <li><a class='home' href="Security.html">Security</a></li>
+            </ul>
+        </div>
+        <div class='obfuscate' onclick="removeClassOpen()">
+        </div>
+        <div id='projects'>
+          <ul>
+            <li><a href="index.html">Go back home</a></li>
+            <li><a href="AWAE.html">AWAE</a></li>
+            <li><a href="MastersThesis.html">Master's Thesis</a></li>
+          </ul>
+        </div>
+        <main>
+          <header>
+            <h1>My Offensive Security AWAE Experience</h1>
+            
+            <img src="img/awae.png" width="100%" height="350px" style="object-fit:cover;">
+            
+          </header>
+          
+          
+          <article>
+      
+              <section>
+                  <h2>Introduction</h2>
+      
+                  <h3>How did I find out about the course?</h3>
+                  <p>Cybersecurity has always been a passion of mine, ever since I discovered the fascinating world of Kali Linux and hacking during my college years. I was amazed by the possibilities and challenges that hacking offered, and I wanted to learn more. However, there was one problem: the best courses in the field, offered by Offensive Security, were too expensive for me at the time. I had to settle for the free courses that Kali Linux provided, which were helpful, but not enough. They focused more on the tools than on the theory behind the hacking techniques.</p>
+                  
+                  <h3>Why was I interested in taking it?</h3>
+                  <p>I hoped that things would change when I entered university and enrolled in security courses. I expected to gain a deeper understanding of the techniques that I had learned from Kali Linux, and to apply them in practical scenarios. However, I was disappointed. The courses were too theoretical and not very engaging. They did not cover the topics that I was most interested in, such as web application hacking.</p>
+                  <p>It was only when I started working as a freelancer that I realized how much I loved web application hacking. During my final year at university, I got a job as a bug fixer for an e-commerce platform. I had to review the code and fix any errors that I found. However, I soon realized that there were more bugs than I had anticipated, and some of them were very serious. For example, I found a flaw in the checkout process that allowed anyone to bypass the payment and get the products for free. I was shocked by how vulnerable the web application was, and how easy it was to exploit it.</p>
+      
+                  <h3>How I finally decided to enroll</h3>
+                  <p>This experience made me more curious and motivated to learn more about web application hacking. I wanted to know how to find and prevent these kinds of vulnerabilities, and how to protect the web applications from malicious attacks. I decided to invest more time and money in studying the subject, and I finally had enough savings to enroll in the Offensive Security AWAE course. This course was exactly what I was looking for. It taught me everything I needed to know about web application hacking, from the basics to the advanced techniques. It also gave me the opportunity to practice my skills in a realistic and challenging environment, where I had to hack into various web applications and write detailed reports about my findings.</p>
+                  <p>The course was not easy, but it was worth it. I learned a lot, and I had a lot of fun. I also earned the prestigious Offensive Security Web Expert (OSWE) certification, which proved my competence and credibility in the field. I am very proud of this achievement, and I am glad that I finally fulfilled my dream of becoming a web application hacker. It was a long and exciting journey, and I am looking forward to the next challenges and opportunities that await me in the cybersecurity world.</p>
+              </section>
+      
+              <section>
+                  <h2>My AWAE Journey</h2>
+           
+                  <img src="img/awae-programming.jpg" width="100%" height="250px" style="object-fit: cover;">
+
+                  <p>I enrolled in the AWAE course in late 2020, with a diverse and rich professional background. I had worked as a web developer for two years, and as a Database Administrator for nine months. I had also learned and mastered various programming languages, such as Python, JavaScript, PHP, JAVA, C++, C#, and some Go. I was confident in my coding skills and eager to learn more.</p>
+
+                  <p>However, 2020 was also a challenging year for me, as it was for many people around the world. The COVID-19 pandemic disrupted the normal course of life and work, and forced me to adapt to a new reality. I was fortunate enough to land a job as a Google Developer Support Engineer, a role that not only tested my technical knowledge, but also my communication and interpersonal skills. I had to provide support and guidance to developers who used Google products and services, and to help them solve their problems and achieve their goals. I also had to actively engage in community outreach, especially on platforms like StackOverflow, where I answered questions and shared my expertise with other developers.</p>
+                  <p>I had to find time and motivation to study and practice the AWAE course material, while also keeping up with the latest trends and developments in the field of web application security.    </p>
+
+    
+              </section>
+      
+              <section>
+                  <h2>The Course</h2>
+      
+                  <h3>What is AWAE?</h3>
+                  <p>AWAE stands for Advanced Web Attacks and Exploitation. It is a course that teaches you how to perform white-box hacking, which means you have access to the source code of the target application. This gives you an advantage over black-box hackers, who only rely on external inputs and outputs.</p>
+      
+                  <h3>Why AWAE?</h3>
+                  <p>AWAE is not just a coding course. It is a course that challenges you to think like a hacker. You will learn how to identify and exploit multiple human errors, such as logic flaws, misconfigurations, and insecure coding practices. You will also learn how to chain these errors together to create a functional exploit that can achieve Remote Code Execution (RCE) - the ultimate hacker goal.</p>
+                  <p>RCE allows you to run arbitrary commands on the target system, giving you full control over it. This can lead to serious consequences, such as data theft, ransomware, or denial-of-service attacks. Therefore, learning how to perform RCE is essential for both offensive and defensive security professionals.</p>
+                  <h3>How AWAE works?</h3>
+                  <p>AWAE is divided into modules, each covering a different vulnerability category. For example, some of the categories are:</p>
+                  <ul class="p-list">
+                    <li>SQL Injection</li>
+                    <li>Cross-Site Scripting</li>
+                    <li>File Inclusion</li>
+                    <li>XML External Entity</li>
+                    <li>Server-Side Template Injection</li>
+                    <li>Deserialization</li>
+                  </ul>
+                  <p>Within each category, you will encounter multiple exercises, each with a different level of difficulty. You will also have the option to try an extra-mile challenge, which is more complex and requires more creativity. These challenges are designed to prepare you for the final exam, where you will face a two-day solo challenge.</p>
+                  <h3>Are you ready for AWAE?</h3>
+                  <p>AWAE is not a course for beginners. It requires a solid foundation in web development, programming, and security. You will also need to have a lot of patience, persistence, and curiosity. AWAE is not a course that spoon-feeds you the answers. It is a course that pushes you to the limit and makes you learn by doing. AWAE will not only teach you how to hack, but also how to think like a hacker.</p>
+                </section>
+
+      
+              <section>
+                  <h2>The Exam</h2>
+      
+                  <h3>Structure</h3>
+                  <i><q>The AWAE exam is not a sprint, but a marathon. It requires stamina, endurance, and perseverance</q></i>
+                  <p>The AWAE exam will test your skills in two realistic scenarios, where you will have to break into two web applications running on virtual machines. Your goal is to find and capture two flags hidden in each system: one for the user level and one for the root level. But that’s not all. You also have to develop a working exploit that can achieve Remote Code Execution (RCE) on the target system. And you have to document every step of your process in a detailed report, explaining how you discovered, analyzed, and exploited the vulnerabilities. You will have 48 hours to complete the exam, during which you will share your screen(s) with an observer who can help you or give you breaks. </p>
+
+      
+                  <h3>How I Hacked My Way to the OSWE Certification</h3>
+                  <div style="display: flex;">                  
+                    <img src="img/awae-me.jpg" alt="Me reading some vulnerable code" height="350" width="350" style="margin: 1em 1em 1em 0">
+                    <p>As I prepared for the ultimate white-box hacking challenge, I adopted a strategic mindset, aware of the importance of time management. The 48-hour exam was like a marathon, not a sprint. I had to pace myself and conserve my energy for the long haul. Therefore, I considered the necessity of resting my weary eyes and taking regular breaks to refresh my mind. I also nourished my body with healthy food, knowing that intense hacking required optimal brain function. In case of hitting a wall, I did not waste time on a single challenge, but moved on to the next one or focused on writing my report. I treated the exam like a puzzle, not a battle. I did not let frustration or anxiety get the best of me, but used logic and creativity to solve the problems. Scheduled breaks and physical movement helped me clear my head and enhance my thought processes. As a result, I was able to complete the exam with confidence and satisfaction.</p>
+
+                  </div>
+                  <i><q>The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards.</q><span> - Gene Spafford</span></i>
+                  <p>This quote sums up the difficulty of the AWAE exam, a 48-hour white-box hacking challenge that requires you to break into two web applications and develop a working exploit. How do you prepare for such a daunting task? Well, here are some personal habits that helped me optimize my productivity and pass the exam with flying colors.</p>
+                  <p>First, I knew myself and my circadian rhythm. I’m not a morning person, so I didn’t force myself to hack at dawn. Instead, I used those hours to write my report, which was less mentally demanding. I saved my peak productivity times for hacking, when I needed to be alert and focused.</p>
+                  
+
+                  <p>Second, I completed the course material and all the extra-mile exercises before the exam. This gave me a solid foundation of knowledge and skills that I could apply to the exam scenarios. For example, one of the extra-mile exercises taught me how to bypass a file upload restriction, which came in handy in the second exam challenge.</p>
+                  <p>Third, I actively participated in the open forum throughout the course. This was a great way to learn from a diverse pool of talented participants, who shared their tips, tricks, and solutions. I also got feedback and support from the instructors and moderators, who were always helpful and encouraging.</p>
+                    <p>These personal habits played a key role in optimizing my productivity and helping me pass the AWAE exam. Of course, I also had some luck and a lot of coffee along the way. But hey, that’s part of the fun of hacking, right?</p>
+                    
+                    <h3>Results</h3>
+                    
+                  <p>As soon as I submitted my report, I felt utterly exhausted. I had just completed the AWAE exam, a 48-hour white-box hacking challenge that pushed me to the limit. I finally managed to capture the elusive root flag of the second exercise late on the second day, around dinner time in Spain. I had already written half of my report, documenting the user flag exploits for both exercises. I spent the third day refining my report and improving my exploit. The submission deadline was 24 hours after the scheduled end of the exam, so I had some time to polish my work. The confirmation of passing the exam, and officially attaining the title of Offensive Security Web Expert (OSWE), arrived approximately five days later, bringing me a surge of accomplishment and satisfaction.</p>
+                  <div class="article_header">
+                    <img src="img/oswe.png">
+                  </div>
+                  <p>2021-01-11</p>
+              </section>
+      
+          </article>
+        </main>
+        <footer>
+          <div class='innerFooter'>
+            <p class="made-with">Made with ♥ at 3 AM | </p>
+              <div class='social'>
+                <a href='mailto:alessandro.mainas@hotmail.it'><img src="img/email.svg"/></a>
+                <a href='https://www.linkedin.com/in/alessandromainas/'><img src="img/linkedin.png"/></a>
+                <a href='https://stackoverflow.com/users/7453656/alessandro'><img src="img/stackoverflow.png"/></a>
+                <a href='https://github.com/Bortoman'><img src="img/25231.svg"/></a>
+              </div>
+          </div>
+          <button type='button' onclick="share()">Share it</button>
+        </footer>
+    </body>
+</html>

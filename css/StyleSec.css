@@ -68,7 +68,7 @@ a{
   color: #34d058;
 }
 code{
-  font-size:8pt;
+  font-size:10pt;
 }
 main {
   padding-bottom: 150px;
@@ -102,7 +102,7 @@ main, .innerFooter{
   margin-right: auto;
 }
 .header_content li{
-  font-size: 18px;
+  font-size: 20px;
   display: inline;
   padding: 18px;
 }
@@ -173,7 +173,7 @@ main, .innerFooter{
   list-style-type: none;
 }
 #projects li{
-  font-size: 16pt;
+  font-size: 20px;
   overflow: hidden;
   position: relative;
 }
@@ -243,7 +243,7 @@ main, .innerFooter{
 }
 .webel{
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 20px;
   width: 50%;
   text-align: center;
 }
@@ -350,5 +350,7 @@ footer button {
  }
 }
 @media screen and (min-width: 1024px){
-
+  main {
+    font-size: 20px;
+  }
 }

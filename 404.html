@@ -40,16 +40,6 @@ permalink: /404.html
                 $('footer button').html(':(');
             }
           }
-          const anim = () => {
-            const nspans = document.getElementsByClassName('n_span');
-            let index = Array.from(nspans).findIndex((element) => {return element.classList.contains('n_red')});
-            nspans[index].classList.remove('n_red');
-            nspans[(index + 1) % nspans.length].classList.add('n_red');
-            setTimeout( () => {
-              window.requestAnimationFrame(anim);
-            }, 450);
-          }
-          window.requestAnimationFrame(anim);
         </script>
         <style>
           #lost {
@@ -64,13 +54,8 @@ permalink: /404.html
             text-align: center;
           }
           #lost h1 {
-            font-size: 58px;
+            font-size: 101px;
             margin: 0;
-          }
-          .n_span {
-            display: inline-block;
-            transform: scale(1);
-            transition: linear .1s;
           }
           .n_red {
             color: red;
@@ -84,10 +69,8 @@ permalink: /404.html
         <![endif]-->
         <main style="min-height: calc(100vh - 150px)">
         <div id='lost'>
-          <h1>
-            <span class="n_span n_red">4</span>
-            <span class="n_span">0</span>
-            <span class="n_span">4</span>
+          <h1 class="n_red">
+            404
           </h1>
           <h2>
             It seems like you're lost...

@@ -1,0 +1,371 @@
+<!doctype html>
+<!--
+ ________  ________  ________  _________  ________  _____ ______   ________  ________
+|\   __  \|\   __  \|\   __  \|\___   ___\\   __  \|\   _ \  _   \|\   __  \|\   ___  \
+\ \  \|\ /\ \  \|\  \ \  \|\  \|___ \  \_\ \  \|\  \ \  \\\__\ \  \ \  \|\  \ \  \\ \  \
+ \ \   __  \ \  \\\  \ \   _  _\   \ \  \ \ \  \\\  \ \  \\|__| \  \ \   __  \ \  \\ \  \
+  \ \  \|\  \ \  \\\  \ \  \\  \|   \ \  \ \ \  \\\  \ \  \    \ \  \ \  \ \  \ \  \\ \  \
+   \ \_______\ \_______\ \__\\ _\    \ \__\ \ \_______\ \__\    \ \__\ \__\ \__\ \__\\ \__\
+    \|_______|\|_______|\|__|\|__|    \|__|  \|_______|\|__|     \|__|\|__|\|__|\|__| \|__|
+-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js" lang="">   <![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Bortoman</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta data-react-helmet="true" name="theme-color" content="#34d058"/>
+        <link rel="icon" href="css/BortomanGitHub.png">
+        <link rel="stylesheet" href="css/StyleSec.css">
+
+        <link rel="stylesheet" href="galleria/themes/classic/galleria.classic.css">
+        <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+
+        <script>
+        function addClassOpen(){
+          $('#projects').addClass('open');
+          $('.plink').addClass('open');
+          $('.obfuscate').addClass('open');
+          $('body').addClass('open');
+          $('.alink').removeClass('open');
+        }
+        function removeClassOpen(){
+          $('#projects').removeClass('open');
+          $('.plink').removeClass('open');
+          $('.obfuscate').removeClass('open');
+          $('body').removeClass('open')
+          $('.alink').addClass('open');
+        }
+        function share() {
+          if (navigator.share) {
+              navigator.share({
+                  title: 'Cybersecurity guide for Threat Modeling',
+                  text: 'Check out Bortoman\'s approach to Threat Modeling and its key concepts!',
+                  url: 'https://bortoman.github.io/ThesisSecurity.html',
+              })
+                  .then(() => $('footer button').html('Thanks!'))
+                  .catch((error) => console.log('Error sharing', error));
+          } else {
+              $('footer button').html(':(');
+          }
+        }
+
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133044821-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-133044821-1');
+        </script>
+    </head>
+    <body>
+        <div class="header_content">
+            <ul>
+                <li><a class='plink' onclick='addClassOpen()'>Projects</a></li>
+                <li><a class='alink open' onclick='removeClassOpen()'>Threat Modeling</a></li>
+                <li><a class='home' href="Security.html">Security</a></li>
+            </ul>
+        </div>
+        <div class='obfuscate' onclick="removeClassOpen()">
+        </div>
+        <div id='projects'>
+          <ul>
+            <li><a href="index.html">Go back home</a></li>
+            <li><a href="AWAE.html">AWAE</a></li>
+            <li><a href="ThreatModeling.html">Threat Modeling</a></li>
+            <li><a href="MastersThesis.html">Master's Thesis</a></li>
+          </ul>
+        </div>
+        <main>
+          <h1>Threat Modeling</h1>
+          <img src="img/threat-cover.jpg" width="100%" height="250px" style="object-fit: cover;">
+          <article>
+            <section>
+                <h2>
+                    What is Threat Modeling and Why Do We Need It?
+                </h2>
+                <p>Threat modeling looks at a system from a potential attacker's perspective, as opposed to a defender's viewpoint. Making threat modeling a core component of your SDLC can help increase product security/</p>
+                <p>Threat modeling is about answering the question:</p>
+                <i><q>How can we find security issues in our applications and systems?</q></i>
+                <h3>Ok, but what information security actually is?</h3>
+                <p>Information Security Dimensions</p>
+                <div style="text-align: center;">
+                  <img src="img/infosecdimensions.png" width="80%">
+                </div>
+                <ul class="p-list">
+                    <li><strong>Authentication:</strong> Verifying the identity of users, systems, or entities to ensure they are who they claim to be.</li>
+                    <li><strong>Authorization:</strong> Granting or restricting access to resources based on the authenticated user's privileges and permissions.</li>
+                    <li><strong>Integrity:</strong> Ensuring that data remains accurate, consistent, and unaltered during storage, processing, or transmission.</li>
+                    <li><strong>Availability:</strong> Ensuring that systems and resources are consistently accessible and usable by authorized users when needed.</li>
+                    <li><strong>Non-Repudiation:</strong> Preventing individuals from denying the validity of their actions or transactions, ensuring accountability for actions taken.</li>
+                    <li><strong>Confidentiality:</strong> Protecting sensitive information from unauthorized access, disclosure, or exposure.</li>
+                </ul>
+                <h3>Threat Modeling and Asset Protection</h3>
+
+                <p>Threat modeling involves a systematic approach to identifying potential threats, assessing vulnerabilities, and implementing security controls. When it comes to assets, the threat modeling process becomes a strategic exercise to ensure the resilience of the organization. Here's how you can approach it:</p>
+                <h4>Asset Identification</h4>
+                <p>Start by creating an inventory of all assets, categorizing them based on their value to the organization. This could include customer data, intellectual property, hardware infrastructure, and more.</p>
+                <p>By understanding what assets are, recognizing their value, and incorporating them into a comprehensive threat modeling framework, organizations can fortify their defenses and safeguard against potential cyber threats.</p>
+
+                <h3>Defining Assets in Threat Modeling. What should we secure?</h3>
+                <h4>1. Valuable Things - The Business Cares!</h4>
+                <p>Assets are the lifeblood of any organization. They are the tangible and intangible elements that contribute to the business's success and sustainability. This could encompass customer data, proprietary software, financial records, or any resource critical to the functioning of the enterprise.</p>
+
+                <h4>2. Something an Attacker Wants?</h4>
+                <p>Assets are not just valuable to the business; they are often equally appealing to attackers with malicious intent. Hackers may target sensitive information, financial assets, or intellectual property to exploit, sell, or disrupt. Identifying what makes an asset attractive to potential threats is a key step in the threat modeling process.</p>
+
+                <h4>3. Something You Want to Protect?</h4>
+                <p>An asset is something that warrants protection. Whether it's customer trust, proprietary technology, or confidential information, recognizing the importance of these elements to the organization is the first line of defense. Understanding what you want to protect helps in crafting robust security measures.</p>
+
+                <h4>4. A Stepping Stone?</h4>
+                <p>Assets can serve as stepping stones for attackers to gain access to more critical systems or information. For example, compromising a less secure system might provide a gateway to a more valuable one. Recognizing the interconnectedness of assets and potential pathways for attackers is vital in building a comprehensive threat model.</p>
+
+                
+            </section>
+            <section>
+              <h2>
+                How to Perform Threat Modeling Step by Step
+              </h2>
+              <ol>
+                <li><strong><a href="#decompose-the-application">Decompose the application</a></strong></li>
+                <li><strong><a href="#determine-and-rank-threats">Determine and rank threats</a></strong></li>
+                <li><strong><a href="#determine-countermeasures-and-mitigation">Determine countermeasures and mitigation</a></strong></li>
+              </ol>
+              <h3 id="decompose-the-application">
+                1. Decompose the application
+              </h3>
+              <p>The first step in the intriguing world of threat modeling involves gaining a solid understanding of the application and its interactions with the outside world. This includes:</p>
+
+              <ul class="p-list">
+                  <li><strong>Creating Use Cases:</strong> Understanding how the application is used by sketching out common scenarios.</li>
+
+                  <li><strong>Identifying Entry Points:</strong> Locating potential areas where an attacker might interact with the application.</li>
+
+                  <li><strong>Identifying Assets:</strong> Recognizing items or areas that might catch an attacker's interest.</li>
+
+                  <li><strong>Identifying Trust Levels:</strong> Defining the access rights the application grants to external entities.</li>
+              </ul>
+
+              <p>All these details find a home in the resulting <strong>Threat Model document</strong>. This document not only summarizes the application's intricacies but also serves as a guide for future security measures.</p>
+
+              <p>Further, these insights contribute to the creation of <strong>Data Flow Diagrams (DFDs)</strong>. These diagrams map out the pathways of information flow, shedding light on privilege boundaries within the system.</p>
+
+              <p>This comprehensive understanding, documented and visualized, equips security professionals to navigate the challenges of safeguarding the digital landscape.</p>
+              <h4>Data Flow Diagram example:</h4>
+              <div style="text-align: center;">
+                <img src="img/dfd.png" width="70%" alt="data flow diagram example" style="min-width: 400px;">
+              </div>
+              <h4>Key description:</h4>
+              <table>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>Appearance</th>
+                        <th>Meaning</th>
+                        <th>Examples</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <th>Process</th>
+                      <td>Rounded rectangle, circle, or concentric circles</td>
+                      <td>Any running code
+                      </td>
+                      <td>Code written in C, C#, Python, or PHP
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>Data Flow</th>
+                      <td>Arrow</td>
+                      <td>Communication between processes, or between processes and data stores
+                      </td>
+                      <td>Network connections, HTTP, RPC, LPC
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>Data Store</th>
+                      <td>Two parallel lines with a label between them
+                      </td>
+                      <td>Things that store data
+                      </td>
+                      <td>Files, databases, the Windows Registry, shared memory segments
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>External entity
+                      </th>
+                      <td>Rectangle with sharp corners
+                      </td>
+                      <td>People, or code outside your control
+                      </td>
+                      <td>Your customer, Acme.com
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <h2 id="determine-and-rank-threats">2. Determine and Rank Threats</h2>
+              <p>In the world of cybersecurity, identifying threats is crucial, and it often begins with a categorization method like STRIDE or the Application Security Framework (<a href="https://pathlock.com/learn/what-are-application-security-frameworks/" target="_blank">ASF</a>). This framework breaks down threats into categories such as Auditing & Logging, Authentication, Authorization, and more.</p>
+
+              <p>The purpose of threat categorization is to highlight potential risks from both the attacker's and defender's perspectives (<a href="https://pathlock.com/learn/what-are-application-security-frameworks/" target="_blank">ASF</a>). When we start the journey, Data Flow Diagrams (DFDs) become handy, helping us spot potential threats from the attacker's point of view – like data sources, processes, and user interactions.</p>
+
+              <p>These identified threats become the basis for threat trees, each representing a specific risk. From a defensive angle, <a href="https://pathlock.com/learn/what-are-application-security-frameworks/" target="_blank">ASF</a> categorization acts as a guide, revealing threats as weaknesses in security controls. To dig deeper into these risks, common threat lists with examples are useful.</p>
+              <p>Practical use and abuse cases come into play, illustrating how existing protective measures could be bypassed or where protection might be lacking. Assessing the security risk for each threat finds its grounding in a risk model like <a href="https://en.wikipedia.org/wiki/DREAD_(risk_assessment_model)">DREAD</a> or a qualitative approach considering factors like likelihood and impact.</p>
+              
+              <h3>STRIDE</h3>
+              <table>
+                <thead>
+                    <tr>
+                        <th>Threat</th>
+                        <th>Property Violated</th>
+                        <th>Threat Definition</th>
+                        <th>Typical Victims</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <th>Spoofing</th>
+                      <td>Authentication</td>
+                      <td>Pretending to be something or someone other than yourself
+                      </td>
+                      <td>Processes, external entities, people
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>Tampering</th>
+                      <td>Integrity</td>
+                      <td>Modifying something on disk, on a network, or in memory
+                      </td>
+                      <td>Data stores, data flows, processes
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>Repudiation</th>
+                      <td>Non- Repudiation
+
+                      </td>
+                      <td>Claiming that you didn't do something, or were not responsible.
+                      </td>
+                      <td>Process
+                      </td>
+                  </tr>
+                  <tr>
+                      <th>Information Disclosure
+
+                      </th>
+                      <td>Confidentiality
+                      </td>
+                      <td>Providing information to someone not authorized to see it
+                      </td>
+                      <td>Processes, data stores, data flows
+                      </td>
+                  </tr>
+                  <tr>
+                    <th>Denial of Service
+
+                    </th>
+                    <td>Availability
+                    </td>
+                    <td>Absorbing resources needed to provide service
+                    </td>
+                    <td>Processes, data stores, data flows
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Elevation of Privilege
+
+                    </th>
+                    <td>Authorization
+                    </td>
+                    <td>Allowing someone to do something they're not authorized to do
+                    </td>
+                    <td>Processes
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h4>Examples of Threats</h4>
+
+              <ul class="p-list">
+                  <li><strong>SPOOFING:</strong> Falsely claiming to be Acme.com, winsock .dll, Barack Obama, a police officer, or the Nigerian Anti-Fraud Group</li>
+
+                  <li><strong>TAMPERING:</strong> Changing a spreadsheet, the binary of an important program, or the contents of a database on disk; modifying, adding, or removing packets over a network, either local or far across the Internet, wired or wireless; changing either the data a program is using or the running program itself</li>
+
+                  <li><strong>REPUDIATION:</strong> Process or system: “I didn't hit the big red button” or “I didn't order that Ferrari.” Note that repudiation is somewhat the odd-threat-out here; it transcends the technical nature of the other threats to the business layer. What evidence do you have?</li>
+
+                  <li><strong>INFORMATION DISCLOSURE:</strong> The most obvious example is allowing access to files, e-mail, or databases, but information disclosure can also involve filenames (“Termination for John Doe.docx”), packets on a network, or the contents of program memory.</li>
+
+                  <li><strong>DENIAL OF SERVICE:</strong> A program that can be tricked into using up all its memory, a file that fills up the disk, or so many network connections that real traffic can't get through</li>
+
+                  <li><strong>ELEVATION OF PRIVILEGE:</strong> Allowing a normal user to execute code as admin; allowing a remote person without any privileges to run code</li>
+              </ul>
+              
+            </section>
+            <section>
+              <h2 id="determine-countermeasures-and-mitigation">
+                Determine Countermeasures and Mitigation
+              </h2>
+              <p>Addressing vulnerabilities in a systematic and effective way is paramount for ensuring the security of an application or system. Here's a structured approach to finding and mitigating vulnerabilities:</p>
+
+              <ul class="p-list">
+                  <li><strong>Find Countermeasures:</strong> Utilize threat-countermeasure mapping lists to identify potential countermeasures for each vulnerability. This step involves understanding the specific threats and determining the appropriate measures to counteract them.</li>
+
+                  <li><strong>Choose a Risk Mitigation Strategy:</strong> Based on the business impact and available options, select a risk mitigation strategy. The options include:</li>
+                  <ul>
+                      <li><strong>Accept:</strong> Decide that the impact is acceptable, acknowledging that the risk is within acceptable limits.</li>
+                      <li><strong>Eliminate:</strong> Remove components that cause the vulnerability, effectively eradicating the source of the risk.</li>
+                      <li><strong>Mitigate:</strong> Implement checks or controls that either reduce the impact or the likelihood of the vulnerability being exploited.</li>
+                  </ul>
+
+                  <li><strong>Document Countermeasures:</strong> Thoroughly document the selected countermeasures for each vulnerability. This documentation serves as a reference for the implemented security measures.</li>
+
+                  <li><strong>Document Residual Risk and Assumptions:</strong> In the threat model documentation, capture the residual risk i.e. the remaining risk after countermeasures are applied. Additionally, document any assumptions made during the mitigation process, providing clarity on the decision-making context.</li>
+              </ul>
+
+              <p>This structured approach ensures that vulnerabilities are not only identified but also addressed with well-thought-out countermeasures, aligning with the overall risk mitigation strategy and business objectives.</p>
+
+            </section>
+            <section>
+              <h2>Tools and Techniques for Creating and Analyzing Threat Models</h2>
+              
+              <ul class="p-list">
+                <li><a href="https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool" target="_blank">Microsoft Threat Modeling Tool</a></li>
+                <li><a href="https://owasp.org/www-project-threat-dragon/" target="_blank">OWASP Threat Dragon</a></li>
+                <li><a href="https://threagile.io/" target="_blank">Threagile</a></li>
+                <li><a href="https://github.com/izar/pytm" target="_blank">OWASP pytm</a></li>
+              </ul>
+            </section>
+            <section>
+              <h2>References</h2>
+              
+              <ul class="p-list">
+                <li><a href="https://owasp.org/www-community/Threat_Modeling" target="_blank">OWASP Threat Modeling</a></li>
+                <li><a href="https://shostack.org/resources/threat-modeling" target="_blank">Threat Modeling: Designing for Security - Adam Shostack
+                </a></li>
+              </ul>
+            </section>
+          </article>
+        </main>
+        <footer>
+          <div class='innerFooter'>
+            <p class="made-with">Made with ♥ at 3 AM | </p>
+              <div class='social'>
+                <a href='mailto:alessandro.mainas@hotmail.it'><img src="img/email.svg"/></a>
+                <a href='https://www.linkedin.com/in/alessandromainas/'><img src="img/linkedin.png"/></a>
+                <a href='https://stackoverflow.com/users/7453656/alessandro'><img src="img/stackoverflow.png"/></a>
+                <a href='https://github.com/Bortoman'><img src="img/25231.svg"/></a>
+              </div>
+          </div>
+          <button type='button' onclick="share()">Share it</button>
+        </footer>
+    </body>
+</html>

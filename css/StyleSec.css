@@ -81,6 +81,21 @@ main, .innerFooter{
   margin-left: auto;
   margin-right: auto;
 }
+table {
+  width: 100%;
+  border: 1px solid;
+  border-collapse: collapse;
+  border-color:#34d058;
+}
+td, th {
+  padding: 6px;
+  border: 1px solid;
+}
+th {
+  color: white;
+  background-color: #34d058;
+  border-color:#34d058;
+}
 .innerFooter{
   padding-top: 55px;
 }
